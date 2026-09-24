@@ -482,7 +482,7 @@ function t0({ className: t = "" }) {
   const r = z(null);
   return W(() => {
     const a = r.current;
-    a && !a.textContent && (a.textContent = "Megha");
+    a && !a.textContent && (a.textContent = "Bilal");
   }, []), /* @__PURE__ */ i("div", { className: `df-name-tag ${t}`.trim(), children: [
     /* @__PURE__ */ e("img", { className: "df-name-tag-img", src: DF_BASE + "stickers/items/hello-name-tag.svg", alt: "", draggable: !1, decoding: "async" }),
     /* @__PURE__ */ e(
@@ -494,7 +494,7 @@ function t0({ className: t = "" }) {
         suppressContentEditableWarning: !0,
         role: "textbox",
         "aria-label": "Name",
-        "data-ph": "Megha",
+        "data-ph": "Bilal",
         spellCheck: !1,
         onPointerDown: (a) => a.stopPropagation(),
         onClick: (a) => a.stopPropagation(),
@@ -852,7 +852,7 @@ const dt = [
   ),
   DF_BASE + "stickers/devices/github-ipad.svg",
   // dev-activity iPad shell
-  DF_BASE + "megha-profile.jpg"
+  DF_BASE + "profile.svg"
   // about-page avatar
 ], c0 = ["onepiece", "workspace", "journal", "stationery"].map((t) => ve.find((r) => r.id === t)).filter((t) => !!t);
 function s0({ value: t, onChange: r }) {
@@ -1085,7 +1085,7 @@ const Be = Mt.map((t) => ({ id: t.id, name: t.name })), Ye = (t) => /sticker-(cu
 ] }), m0 = (t) => /* @__PURE__ */ i("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true", ...t, children: [
   /* @__PURE__ */ e("path", { d: "M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1" }),
   /* @__PURE__ */ e("path", { d: "M14 11a5 5 0 0 0-7.1 0l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1" })
-] }), He = "https://github.com/Meghamittal0920", ut = "df-dev-activity-link";
+] }), He = "https://github.com/ansaribilal10976-lang", ut = "df-dev-activity-link";
 function g0(t) {
   const r = t.trim();
   return r ? /^[a-z][a-z0-9+.-]*:\/\//i.test(r) ? r : `https://${r}` : He;
@@ -2156,11 +2156,11 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
   /* @__PURE__ */ e("span", { className: "df-cover-band", "aria-hidden": "true" }),
   /* @__PURE__ */ i("div", { className: "df-cover-label", children: [
     /* @__PURE__ */ i("span", { className: "df-cover-mark", "aria-hidden": "true", children: [
-      /* @__PURE__ */ e("span", { className: "df-cover-mono", children: "MM" }),
+      /* @__PURE__ */ e("span", { className: "df-cover-mono", children: "BA" }),
       /* @__PURE__ */ e("svg", { className: "df-cover-cursor", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ e("path", { d: "M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" }) })
     ] }),
-    /* @__PURE__ */ e("p", { className: "df-cover-title", children: "Megha Mittal" }),
-    /* @__PURE__ */ e("span", { className: "df-cover-sub", children: "anime + code" }),
+    /* @__PURE__ */ e("p", { className: "df-cover-title", children: "Bilal Ansari" }),
+    /* @__PURE__ */ e("span", { className: "df-cover-sub", children: "web design studio" }),
     /* @__PURE__ */ e("span", { className: "df-cover-lines", "aria-hidden": "true" })
   ] }),
   /* @__PURE__ */ i("span", { className: "df-cover-hint", children: [
@@ -2178,12 +2178,12 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
     ] }),
     /* @__PURE__ */ i("div", { className: "df-about-head", children: [
-      /* @__PURE__ */ e("span", { className: "df-avatar df-avatar--big", children: /* @__PURE__ */ e("img", { src: DF_BASE + "megha-profile.jpg", alt: "Megha Mittal", loading: "lazy", decoding: "async" }) }),
+      /* @__PURE__ */ e("span", { className: "df-avatar df-avatar--big", children: /* @__PURE__ */ e("img", { src: DF_BASE + "profile.svg", alt: "Bilal Ansari", loading: "lazy", decoding: "async" }) }),
       /* @__PURE__ */ i("div", { children: [
-        /* @__PURE__ */ e(ue, { className: "df-name", placeholder: "your name", initial: "Megha Mittal" }),
+        /* @__PURE__ */ e(ue, { className: "df-name", placeholder: "your name", initial: "Bilal Ansari" }),
         /* @__PURE__ */ i("span", { className: "df-role", children: [
           /* @__PURE__ */ e(pe, {}),
-          " frontend developer · Noida"
+          " founder, Obsidian Studio · Mumbra"
         ] })
       ] })
     ] }),
@@ -2192,13 +2192,13 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       {
         className: "df-edit--body",
         placeholder: "a little about you…",
-        initial: "I build clean, responsive digital experiences with HTML, JavaScript, SQL & SAP — and anime tribute websites the internet keeps starring. I don't code anime, I watch anime ✨"
+        initial: "I run Obsidian Studio, a web design agency in Mumbra, Thane. I build clean, fast websites for local businesses and real estate developers ✨"
       }
     ) }),
     /* @__PURE__ */ e("p", { className: "df-label df-label--push", children: "currently…" }),
     /* @__PURE__ */ i("span", { className: "df-date", children: [
       /* @__PURE__ */ e(De, {}),
-      " open to freelance & collabs"
+      " taking new client projects"
     ] })
   ] }, "p0"),
   // spread 1 right: skills
@@ -2214,12 +2214,12 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
         " i build with"
       ] }),
       /* @__PURE__ */ i("ul", { className: "df-tags", children: [
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "HTML" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "CSS" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "JavaScript" }),
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "React" }),
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "Vite" }),
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "Web design" }),
         /* @__PURE__ */ e("li", { className: "df-tag", children: "TypeScript" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "SQL" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "SAP" })
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "Supabase" }),
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "AI-assisted builds" })
       ] })
     ] }),
     /* @__PURE__ */ i("div", { className: "df-card", children: [
@@ -2230,8 +2230,8 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       /* @__PURE__ */ i("ul", { className: "df-tags df-tags--blush", children: [
         /* @__PURE__ */ e("li", { className: "df-tag", children: "clean UI" }),
         /* @__PURE__ */ e("li", { className: "df-tag", children: "responsive design" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "anime aesthetics" }),
-        /* @__PURE__ */ e("li", { className: "df-tag", children: "storytelling" })
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "client results" }),
+        /* @__PURE__ */ e("li", { className: "df-tag", children: "fast delivery" })
       ] })
     ] })
   ] }, "p1"),
@@ -2240,17 +2240,17 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     /* @__PURE__ */ e("h3", { className: "df-hello", children: "selected work" }),
     /* @__PURE__ */ i("div", { className: "df-proj", children: [
       /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://github.com/Meghamittal0920/Naruto-SageMode", variant: 0, children: "Naruto SageMode" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "31★ on GitHub" })
+        /* @__PURE__ */ e($e, { href: "https://stonemountgroup.in", variant: 0, children: "Stone Mount Group" }),
+        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "real estate" })
       ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "An HTML/CSS/JS tribute to Sage Mode — my most-starred project, forked 16 times." })
+      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite website for a real estate developer." })
     ] }),
     /* @__PURE__ */ i("div", { className: "df-proj", children: [
       /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://github.com/Meghamittal0920/One-Piece-3D-Website", variant: 2, children: "One Piece 3D" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "TypeScript" })
+        /* @__PURE__ */ e($e, { href: "https://heartdrop.in", variant: 2, children: "HeartDrop" }),
+        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "my product" })
       ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A 3D One Piece website — set sail with the Straw Hats in the browser." })
+      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A digital gifting hub for couples." })
     ] })
   ] }, "p2"),
   // spread 2 right: more work
@@ -2259,17 +2259,17 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "more work" }),
     /* @__PURE__ */ i("div", { className: "df-proj", children: [
       /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://github.com/Meghamittal0920/Zoro-King-of-hell", variant: 3, children: "Zoro: King of Hell" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "fan page" })
+        /* @__PURE__ */ e($e, { href: "https://snapcase.in", variant: 3, children: "Snapcase" }),
+        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "ecommerce" })
       ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "Three swords, one page. A dark, cinematic tribute to the future King of Hell." })
+      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A MagSafe accessories brand, storefront and build." })
     ] }),
     /* @__PURE__ */ i("div", { className: "df-proj", children: [
       /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://github.com/Meghamittal0920/Gojo", variant: 1, children: "Gojo & Sukuna" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "JJK duo" })
+        /* @__PURE__ */ e($e, { href: "https://github.com/ansaribilal10976-lang", variant: 1, children: "Glitch Cafe" }),
+        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "client site" })
       ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "Twin Jujutsu Kaisen tributes — the honored one and the King of Curses, both in pure HTML/CSS/JS." })
+      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A website built for a cafe client." })
     ] }),
     /* @__PURE__ */ i("p", { className: "df-sig", children: [
       "…and more on the shelf ",
@@ -2283,21 +2283,21 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
         /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
         /* @__PURE__ */ i("div", { children: [
-          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Frontend Developer" }),
-          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "Wiley · now" })
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Founder & Web Designer" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "Obsidian Studio · now" })
         ] })
       ] }),
       /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
         /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
         /* @__PURE__ */ i("div", { children: [
-          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Open-source Anime Web Projects" }),
-          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "GitHub · 11 repos, 100+ stars" })
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Local business & real estate clients" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "Mumbra · Thane" })
         ] })
       ] }),
       /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
         /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
         /* @__PURE__ */ i("div", { children: [
-          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "HTML · JavaScript · SQL · SAP" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "React · Vite · Supabase" }),
           /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "building clean, responsive experiences" })
         ] })
       ] })
@@ -2315,19 +2315,19 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       {
         className: "df-edit--body",
         placeholder: "a friendly note…",
-        initial: "Got a project, a collab idea, or just want to argue about the strongest Straw Hat? I'd love to hear from you."
+        initial: "Need a website for your business? I'd love to hear from you."
       }
     ),
     /* @__PURE__ */ i("ul", { className: "df-links", children: [
-      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "https://github.com/Meghamittal0920", target: "_blank", rel: "noreferrer", children: [
+      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "https://github.com/ansaribilal10976-lang", target: "_blank", rel: "noreferrer", children: [
         /* @__PURE__ */ e(A0, {}),
         " GitHub"
       ] }) }),
-      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "https://instagram.com/meghamittal92000", target: "_blank", rel: "noreferrer", children: [
+      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "https://instagram.com/obsidian.studio.web", target: "_blank", rel: "noreferrer", children: [
         /* @__PURE__ */ e(T0, {}),
         " Instagram"
       ] }) }),
-      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "mailto:meghamittal563@gmail.com", children: [
+      /* @__PURE__ */ e("li", { children: /* @__PURE__ */ i("a", { className: "df-link", href: "mailto:ansari.bilal10976@gmail.com", children: [
         /* @__PURE__ */ e($0, {}),
         " Email"
       ] }) })
