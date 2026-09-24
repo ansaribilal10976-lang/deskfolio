@@ -80,6 +80,10 @@
 .df-avatar.df-avatar--big { width: 96px; height: 96px; }
 
 /* --- Interactive iPod sticker ------------------------------------------- */
+.ipod {
+  cursor: pointer;
+  pointer-events: auto;
+}
 .ipod .menu li,
 .ipod .clickwheel-button {
   cursor: pointer;
@@ -91,4 +95,32 @@
 @keyframes df-ipod-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: .45; }
+}
+
+/* Tap-to-zoom overlay: the desk sticker is tiny, so tapping it pops a
+   full-size, centered copy on top of everything instead. */
+.df-ipod-zoom-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  animation: df-ipod-zoom-fade-in .15s ease-out;
+}
+@keyframes df-ipod-zoom-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.df-ipod-zoom-wrap {
+  position: static !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+.df-ipod-zoom-clone {
+  transform: scale(2.3);
+  transform-origin: center;
 }
