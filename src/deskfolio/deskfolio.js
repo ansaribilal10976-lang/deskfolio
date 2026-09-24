@@ -2239,36 +2239,11 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       ] }),
       /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite website for a real estate developer." })
     ] }),
-    /* @__PURE__ */ i("div", { className: "df-proj", children: [
-      /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://heartdrop.in", variant: 2, children: "HeartDrop" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "my product" })
-      ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A digital gifting hub for couples." })
-    ] })
   ] }, "p2"),
   // spread 2 right: more work
   /* @__PURE__ */ i("div", { className: "df-page", children: [
     /* @__PURE__ */ e(pe, { className: "df-doodle df-doodle--butter", style: { bottom: 16, right: 12, width: 22, height: 22 } }),
     /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "more work" }),
-    /* @__PURE__ */ i("div", { className: "df-proj", children: [
-      /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://snapcase.in", variant: 3, children: "Snapcase" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "ecommerce" })
-      ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A MagSafe accessories brand, storefront and build." })
-    ] }),
-    /* @__PURE__ */ i("div", { className: "df-proj", children: [
-      /* @__PURE__ */ i("p", { className: "df-proj-head", children: [
-        /* @__PURE__ */ e($e, { href: "https://github.com/ansaribilal10976-lang", variant: 1, children: "Glitch Cafe" }),
-        /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "client site" })
-      ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A website built for a cafe client." })
-    ] }),
-    /* @__PURE__ */ i("p", { className: "df-sig", children: [
-      "…and more on the shelf ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
-    ] })
   ] }, "p3"),
   // spread 3 left: experience timeline
   /* @__PURE__ */ i("div", { className: "df-page", children: [
