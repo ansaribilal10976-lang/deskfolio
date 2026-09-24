@@ -64,3 +64,17 @@
 .df-sticker-picker {
   grid-template-columns: repeat(4, 52px) !important;
 }
+/* --- Dark studio theme overrides --------------------------------------- */
+.df-doodle, .df-cover-doodle, .df-thanks-spark { display: none !important; }
+.df-hello { font-size: clamp(1.5rem, 9cqw, 2.1rem); text-transform: uppercase; letter-spacing: .07em; line-height: 1.05; }
+.df-card-title { font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; }
+.df-label { font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; }
+.df-name { font-size: 1.35rem; letter-spacing: .01em; }
+.df-sig { font-size: 1rem; }
+.df-cover-label .df-cover-title { font-size: clamp(1.1rem, 8.5cqw, 1.8rem); letter-spacing: .02em; }
+.df-cover-label .df-cover-sub { letter-spacing: .2em; }
+.df-cover-hint, .df-end-title, .df-thanks-title { font-family: var(--df-font-hand); }
+.df-tag, .df-proj-meta { letter-spacing: .03em; }
+.df-page { background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1.4px); }
+.df-photo { background: #26282f; }
+.df-avatar.df-avatar--big { width: 96px; height: 96px; }

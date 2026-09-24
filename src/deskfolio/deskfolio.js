@@ -790,8 +790,6 @@ const ke = {
       // pencil
       { src: Se, width: "clamp(82px, 8.1vw, 154px)", rotate: -14, pos: { top: "43%", right: "6.7%" } },
       // iPod
-      { src: B + "sticker-cutie-bear.svg", width: "clamp(62px, 9.6vw, 166px)", rotate: -4, pos: { top: "62%", right: "18.3%" }, stuck: !0 },
-      // bear sticker
       { src: B + "sticker-journal-3.svg", width: "clamp(76px, 11.8vw, 215px)", rotate: -8, pos: { bottom: "16%", left: "21.5%" } },
       // glasses
       { src: B + "sticker-plant-succulent.svg", width: "clamp(64px, 12vw, 185px)", rotate: 3, pos: { bottom: "5.2%", right: "6.8%" } }
@@ -1802,6 +1800,10 @@ function C0({ href: t }) {
 }
 var wt;
 const Me = (wt = ve.find((t) => t.id === "workspace")) == null ? void 0 : wt.items.find((t) => t.lamp), M0 = 1.15, Q0 = 10, Xe = [
+  { id: "obsidian", name: "Obsidian", base: "#1b1d24", ink: "light" },
+  { id: "graphite", name: "Graphite", base: "#2e323d", ink: "light" },
+  { id: "steel", name: "Steel blue", base: "#34506b", ink: "light" },
+  { id: "gold", name: "Gold", base: "#c9a25a", ink: "dark" },
   { id: "powder", name: "Powder", base: "#f4c9d6", ink: "dark" },
   { id: "garden-blush", name: "Garden blush", base: "#e9bdc8", ink: "dark" },
   { id: "blush", name: "Blush", base: "#f3a3bd", ink: "dark" },
@@ -1922,6 +1924,8 @@ const Ve = (t, r, a) => [
   "repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 28px)",
   `radial-gradient(130% 120% at 50% 0%, ${t} 0%, ${r} 70%, ${a} 100%)`
 ].join(", "), Pe = [
+  { id: "obsidian", name: "Obsidian", swatch: "#0f1013", style: { backgroundColor: "#0f1013", backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 56px), repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 56px), radial-gradient(130% 120% at 50% 0%, #1c1e25 0%, #101115 70%, #0a0b0d 100%)", "--df-cast": "rgba(0, 0, 0, 0.6)" } },
+  { id: "slate", name: "Slate", swatch: "#1e252e", style: { backgroundColor: "#1e252e", backgroundImage: "radial-gradient(130% 120% at 50% 0%, #2a3440 0%, #1e252e 70%, #161c23 100%)", "--df-cast": "rgba(0, 0, 0, 0.5)" } },
   { id: "mat", name: "Green mat", swatch: "#2f6f5b", style: { backgroundColor: "#2f6f5b", backgroundImage: Ve("#347a64", "#285446", "#20473b"), "--df-cast": "rgba(15, 30, 24, 0.5)" } },
   { id: "matblue", name: "Blue mat", swatch: "#2f5a6f", style: { backgroundColor: "#2f5a6f", backgroundImage: Ve("#36728c", "#284c5c", "#203f4d"), "--df-cast": "rgba(14, 28, 36, 0.5)" } },
   { id: "matpink", name: "Pink mat", swatch: "#a85d72", style: { backgroundColor: "#a85d72", backgroundImage: Ve("#b56a80", "#8c4a5e", "#76414f"), "--df-cast": "rgba(70, 30, 44, 0.42)" } },
@@ -2033,6 +2037,12 @@ function E0({ value: t, onChange: r }) {
   return /* @__PURE__ */ e(Bt, { label: "background", value: t, onChange: r, options: Pe.map((a) => ({ id: a.id, name: a.name, swatch: a.swatch })) });
 }
 const gt = [
+  { name: "Obsidian", coverId: "obsidian", bgId: "obsidian" },
+  { name: "Graphite Night", coverId: "graphite", bgId: "slate" },
+  { name: "Steel Desk", coverId: "steel", bgId: "obsidian" },
+  { name: "Gold on Slate", coverId: "gold", bgId: "slate" },
+  { name: "Gold on Obsidian", coverId: "gold", bgId: "obsidian" }
+], gtOld = [
   { name: "Pink Scene", coverId: "milk-mint", bgId: "pinkscene" },
   // default
   { name: "Grand Line", coverId: "butter", bgId: "op-red" },
@@ -2070,47 +2080,31 @@ const gt = [
   { name: "Blue Cotton Candy", coverId: "cotton-candy", bgId: "blue-cute-scene" }
   // candy on blue scene
 ], kt = [
-  { name: "Pink Scene", coverId: "milk-mint", bgId: "pinkscene" },
-  { name: "Milk Mint Rose", coverId: "milk-mint", bgId: "matpink" },
-  { name: "Periwinkle Clover", coverId: "periwinkle", bgId: "mat" }
+  { name: "Graphite Night", coverId: "graphite", bgId: "slate" },
+  { name: "Steel Desk", coverId: "steel", bgId: "obsidian" },
+  { name: "Gold on Slate", coverId: "gold", bgId: "slate" }
 ], bt = [
-  { name: "Periwinkle Clover", coverId: "periwinkle", bgId: "mat" },
-  { name: "Milk Mint Rose", coverId: "milk-mint", bgId: "matpink" }
+  { name: "Obsidian", coverId: "obsidian", bgId: "obsidian" },
+  { name: "Graphite Night", coverId: "graphite", bgId: "slate" }
 ], R0 = {
   pinkscene: "milk-mint",
   "cream-botanical": "garden-blush",
   "sky-cloud-grid": "lemon-cream",
   "blue-cute-scene": "cotton-candy"
 }, D0 = {
-  journal: "pinkscene",
-  stationery: "sky-cloud-grid"
+  journal: "slate",
+  stationery: "obsidian"
 };
 function P0(t, r) {
   const a = gt.filter((s) => s.coverId !== t || s.bgId !== r), n = a.length ? a : gt;
   return n[Math.floor(Math.random() * n.length)];
 }
 const Oe = [
-  "sticker-cutie-bear.svg",
-  "sticker-cutie-chick.svg",
-  "sticker-cutie-pig.svg",
-  "sticker-cutie-snail.svg",
-  "sticker-cutie-cat-meow.svg",
-  "sticker-cutie-cat-wiggle.svg",
-  "sticker-cutie-sleepy-bunny.svg",
-  "sticker-cutie-sleepy-kitty.svg",
-  "sticker-cutie-rainbow-cloud.svg",
-  "sticker-cutie-unicorn-float.svg",
-  "sticker-cutie-flower-smile.svg",
-  "sticker-cutie-gift.svg",
-  "sticker-cutie-rocket.svg",
-  "sticker-cutie-apple.svg",
-  "sticker-cutie-cherry-mug.svg",
-  "sticker-cutie-poppies.svg",
-  "sticker-cutie-tulip-heart.svg",
-  "sticker-cutie-gameboy.svg",
-  "sticker-cutie-sneaker.svg",
-  "sticker-plant-succulent.svg",
-  "sticker-plant-2.svg"
+  "sticker-dev-react.svg",
+  "sticker-dev-javascript.svg",
+  "sticker-dev-typescript.svg",
+  "sticker-dev-github.svg",
+  "sticker-dev-html.svg"
 ];
 function vt(t) {
   const r = new Set(t ?? []), a = Oe.filter((p) => !r.has(p)), n = a[Math.floor(Math.random() * a.length)], s = Oe.filter((p) => p !== n && !r.has(p)), k = (s.length ? s : Oe.filter((p) => p !== n))[Math.floor(Math.random() * (s.length ? s.length : Oe.length - 1))];
@@ -2165,7 +2159,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
   ] }),
   /* @__PURE__ */ i("span", { className: "df-cover-hint", children: [
     "tap to open ",
-    /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+    /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
   ] })
 ] }), G0 = [
   // spread 1 left: about
@@ -2175,7 +2169,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     /* @__PURE__ */ e(pe, { className: "df-doodle df-doodle--soft df-doodle--lilac", style: { bottom: 165, right: 74, width: 14, height: 14 } }),
     /* @__PURE__ */ i("h3", { className: "df-hello", children: [
       "about me ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] }),
     /* @__PURE__ */ i("div", { className: "df-about-head", children: [
       /* @__PURE__ */ e("span", { className: "df-avatar df-avatar--big", children: /* @__PURE__ */ e("img", { src: DF_BASE + "profile.svg", alt: "Bilal Ansari", loading: "lazy", decoding: "async" }) }),
@@ -2273,7 +2267,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     ] }),
     /* @__PURE__ */ i("p", { className: "df-sig", children: [
       "…and more on the shelf ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] })
   ] }, "p3"),
   // spread 3 left: experience timeline
@@ -2308,7 +2302,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     /* @__PURE__ */ e(De, { className: "df-doodle", style: { top: 2, right: 6, width: 16, height: 16 } }),
     /* @__PURE__ */ i("h3", { className: "df-hello df-hello--lilac", children: [
       "say hi ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] }),
     /* @__PURE__ */ e(
       ue,
@@ -2334,7 +2328,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     ] }),
     /* @__PURE__ */ i("p", { className: "df-sig", children: [
       "say hi anytime ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] })
   ] }, "p5"),
   // spread 4 left: colophon
@@ -2351,7 +2345,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     ) }),
     /* @__PURE__ */ i("p", { className: "df-sig", children: [
       "thanks for the curiosity ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] })
   ] }, "p6"),
   // spread 4 right: closing finale
@@ -2359,7 +2353,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     /* @__PURE__ */ e(pe, { className: "df-thanks-spark" }),
     /* @__PURE__ */ i("p", { className: "df-thanks-title", children: [
       "thanks for reading ",
-      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "♡" })
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
     ] }),
     /* @__PURE__ */ e("span", { className: "df-thanks-sub", children: "let's make something" })
   ] }, "p7")
@@ -2469,7 +2463,7 @@ function z0() {
       });
     };
   }, []);
-  const [R, K] = M("onepiece"), [j, J] = M(() => vt()), [b, E] = M(!1);
+  const [R, K] = M("workspace"), [j, J] = M(() => vt()), [b, E] = M(!1);
   W(() => {
     E(!1);
   }, [R]);
