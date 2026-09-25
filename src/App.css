@@ -181,3 +181,6 @@ html:not(.df-ipod-seen) .ipod:not(.df-ipod-zoom-clone)::after {
     transform: translateX(-50%);
   }
 }
+.df-mipod .screen {
+  background-color: transparent;
+}
