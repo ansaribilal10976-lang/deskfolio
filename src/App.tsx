@@ -1,5 +1,5 @@
 // Vendored copy of deskfolio (dist build) so the notebook content, cover,
-git push// stickers, and links can be customized for Bilal Ansari.
+// stickers, and links can be customized for Bilal Ansari.
 import { useEffect, useState } from 'react'
 import { PullCord } from 'pullcord'
 import 'pullcord/pullcord.css'
