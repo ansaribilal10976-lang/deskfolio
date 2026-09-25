@@ -23,8 +23,20 @@ export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
     title: "Extras",
     items: [
       { label: "GitHub", url: "https://github.com/ansaribilal10976-lang" },
-      { label: "Email me" }, // TODO: e.g. "mailto:you@example.com"
-      { label: "Resume" }, // TODO: add PDF/Drive link
+      { label: "Email me", url: "mailto:ba7992550@gmail.com" },
+    ],
+  },
+  Settings: {
+    title: "Terminal",
+    items: [
+      { label: "$ whoami" },
+      { label: "bilal_ansari" },
+      { label: "$ cat stack.txt" },
+      { label: "Next.js / React / Supabase" },
+      { label: "$ ls clients/" },
+      { label: "stonemountgroup.in ..." },
+      { label: "$ open instagram", url: "https://instagram.com/obsidian.studio.web" },
+      { label: "$ _" },
     ],
   },
 };
