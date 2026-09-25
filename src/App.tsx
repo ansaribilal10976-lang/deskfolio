@@ -11,25 +11,24 @@ import IntroBoot from './components/IntroBoot'
 
 export default function App() {
   const [lightsOn, setLightsOn] = useState(true)
-  const [started, setStarted] = useState(false)
+  const [showIntro, setShowIntro] = useState(true)
 
   useEffect(() => {
-    if (started) initIpodSticker()
-  }, [started])
-
-  if (!started) {
-    return <IntroBoot onDone={() => setStarted(true)} />
-  }
+    initIpodSticker()
+  }, [])
 
   return (
-    <div className={lightsOn ? 'room' : 'room room--dark'}>
-      <DeskFolio />
-      <div className="room-dim" aria-hidden="true" />
-      <PullCord
-        onPull={() => setLightsOn((on) => !on)}
-        pulled={!lightsOn}
-        ariaLabel="Toggle the room light"
-      />
-    </div>
+    <>
+      <div className={lightsOn ? 'room' : 'room room--dark'}>
+        <DeskFolio />
+        <div className="room-dim" aria-hidden="true" />
+        <PullCord
+          onPull={() => setLightsOn((on) => !on)}
+          pulled={!lightsOn}
+          ariaLabel="Toggle the room light"
+        />
+      </div>
+      {showIntro && <IntroBoot onDone={() => setShowIntro(false)} />}
+    </>
   )
 }
