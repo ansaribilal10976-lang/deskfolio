@@ -232,6 +232,24 @@ function closeZoom() {
   overlay = null;
 }
 
+// --- Selecting a menu item (tap on it, or the wheel's center Select button) -
+
+function activateMenuItem(menuItem: HTMLLIElement) {
+  const ul = menuItem.closest<HTMLElement>(".menu");
+  if (ul?.dataset.dfView === "sub") {
+    const url = menuItem.dataset.url;
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
+    return;
+  }
+  const label = menuItem.textContent?.trim() ?? "";
+  if (ul && label in IPOD_SUBMENUS) {
+    enterSubmenu(ul, label);
+    return;
+  }
+  const items = getMenuItems(menuItem.closest(IPOD_SELECTOR) ?? document);
+  setActiveIndex(items, items.indexOf(menuItem));
+}
+
 // --- Click handling ---------------------------------------------------------
 
 function handleClick(e: MouseEvent) {
@@ -251,24 +269,26 @@ function handleClick(e: MouseEvent) {
 
   const menuItem = target.closest<HTMLLIElement>(MENU_ITEM_SELECTOR);
   if (menuItem) {
-    const ul = menuItem.closest<HTMLElement>(".menu");
-    if (ul?.dataset.dfView === "sub") {
-      const url = menuItem.dataset.url;
-      if (url) window.open(url, "_blank", "noopener,noreferrer");
-      return;
-    }
-    const label = menuItem.textContent?.trim() ?? "";
-    if (ul && label in IPOD_SUBMENUS) {
-      enterSubmenu(ul, label);
-      return;
-    }
-    const items = getMenuItems(menuItem.closest(IPOD_SELECTOR) ?? document);
-    setActiveIndex(items, items.indexOf(menuItem));
+    activateMenuItem(menuItem);
     return;
   }
 
   const wheelButton = target.closest<HTMLButtonElement>(WHEEL_BUTTON_SELECTOR);
-  if (!wheelButton) return;
+
+  // The round hub in the middle of the wheel (the circle drawn by
+  // .clickwheel:after) isn't a real element, so a tap there lands on the
+  // .clickwheel div itself - only if it's not one of the four edge buttons.
+  // Real iPods use that hub as the "Select" button, so match that: confirm
+  // whichever item is currently highlighted.
+  if (!wheelButton) {
+    const wheel = target.closest<HTMLElement>(`${IPOD_SELECTOR} .clickwheel`);
+    if (!wheel) return;
+    const ipodRoot = wheel.closest(IPOD_SELECTOR) ?? document;
+    const items = getMenuItems(ipodRoot);
+    const active = items[getActiveIndex(items)];
+    if (active) activateMenuItem(active);
+    return;
+  }
 
   const ipodRoot = wheelButton.closest(IPOD_SELECTOR) ?? document;
   const items = getMenuItems(ipodRoot);
