@@ -7,13 +7,19 @@ import { DeskFolio } from './deskfolio/deskfolio'
 import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
+import IntroBoot from './components/IntroBoot'
 
 export default function App() {
   const [lightsOn, setLightsOn] = useState(true)
+  const [started, setStarted] = useState(false)
 
   useEffect(() => {
-    initIpodSticker()
-  }, [])
+    if (started) initIpodSticker()
+  }, [started])
+
+  if (!started) {
+    return <IntroBoot onDone={() => setStarted(true)} />
+  }
 
   return (
     <div className={lightsOn ? 'room' : 'room room--dark'}>

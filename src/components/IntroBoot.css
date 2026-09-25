@@ -1,0 +1,91 @@
+.cobs-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(ellipse at 50% 20%, #121318 0%, #0d0e11 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+.cobs-stage.cobs-exit {
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.cobs-idle {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  transition: opacity 0.4s ease;
+}
+.cobs-idle.cobs-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cobs-diamond {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #f4d78a, #e8b95f);
+  transform: rotate(45deg);
+  border-radius: 4px;
+  box-shadow: 0 0 24px rgba(232, 185, 95, 0.5);
+  animation: cobs-pulse 2.6s ease-in-out infinite;
+}
+@keyframes cobs-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.cobs-name { font-size: 22px; font-weight: 700; color: #eee; letter-spacing: 0.3px; }
+.cobs-tag { font-size: 11px; letter-spacing: 4px; color: #6b6f76; text-transform: uppercase; }
+
+.cobs-start {
+  margin-top: 20px;
+  padding: 13px 34px;
+  border-radius: 999px;
+  border: 1px solid #e8b95f;
+  background: transparent;
+  color: #e8b95f;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.cobs-start:active { transform: scale(0.96); background: rgba(232, 185, 95, 0.08); }
+.cobs-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8b95f; animation: cobs-blink 1.4s infinite; }
+@keyframes cobs-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+.cobs-term {
+  position: absolute;
+  inset: 0;
+  padding: 60px 26px;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #c7c9cf;
+}
+.cobs-prompt { color: #e8b95f; text-shadow: 0 0 8px rgba(232, 185, 95, 0.5); }
+.cobs-ln { opacity: 0; white-space: pre; filter: blur(2px); transition: opacity 0.35s, filter 0.35s; }
+.cobs-ln.cobs-on { opacity: 1; filter: blur(0); }
+
+.cobs-barTrack { margin-top: 14px; height: 4px; border-radius: 3px; background: #232428; overflow: hidden; position: relative; }
+.cobs-barFill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #b98a3a, #e8b95f, #f4d78a);
+  transition: width 0.05s linear;
+}
+.cobs-pct { color: #6b6f76; font-size: 12px; margin-top: 6px; }
+.cobs-done { color: #7bd88f; opacity: 0; transition: opacity 0.3s; margin-top: 10px; }
+.cobs-done.cobs-on { opacity: 1; }
