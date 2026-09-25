@@ -2240,11 +2240,6 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite website for a real estate developer." })
     ] }),
   ] }, "p2"),
-  // spread 2 right: more work
-  /* @__PURE__ */ i("div", { className: "df-page", children: [
-    /* @__PURE__ */ e(pe, { className: "df-doodle df-doodle--butter", style: { bottom: 16, right: 12, width: 22, height: 22 } }),
-    /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "more work" }),
-  ] }, "p3"),
   // spread 3 left: experience timeline
   /* @__PURE__ */ i("div", { className: "df-page", children: [
     /* @__PURE__ */ e("h3", { className: "df-hello", children: "experience" }),
