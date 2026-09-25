@@ -84,6 +84,12 @@
   cursor: pointer;
   pointer-events: auto;
 }
+.ipod, .ipod * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
 .ipod .menu li,
 .ipod .clickwheel-button {
   cursor: pointer;
