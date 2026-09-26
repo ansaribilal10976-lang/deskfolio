@@ -1,6 +1,7 @@
 // Content for the zoomed iPod's sub-menus. Edit this file only.
 //  - "Music"  -> your projects, shown as tracks
 //  - "Extras" -> links (GitHub, contact, resume)
+//  - "Shuffle Songs" -> real audio tracks (each has its own `src`)
 // An entry WITHOUT a url is shown dimmed and does nothing when tapped,
 // so unfinished links never send people to a dead page.
 // Keep labels short (~12 chars): the iPod screen is tiny.
@@ -9,7 +10,7 @@
 // (deskfolio/deskfolio.js) — same 3 projects, same URLs. Update both
 // places if a project is added, removed, or its URL changes.
 
-export type IpodEntry = { label: string; url?: string };
+export type IpodEntry = { label: string; url?: string; src?: string };
 export type IpodSubmenu = { title: string; items: IpodEntry[] };
 
 export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
@@ -27,16 +28,14 @@ export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
     ],
   },
   "Shuffle Songs": {
-    // No url on these — tapping a track plays/pauses the local track
-    // (audio/ipod-track.mp3) instead of navigating. See the
+    // Each track has its OWN src, so tapping a different song actually
+    // switches audio instead of replaying the same loop. See the
     // "Shuffle Songs" special-case in deskfolio-ipod-interactive.ts.
     title: "Shuffle Songs",
     items: [
-      { label: "Obsidian Mix" },
-      { label: "Night Coder" },
-      { label: "Thane Nights" },
-      { label: "Deploy Day" },
-      { label: "Client Calls" },
+      { label: "A Beautiful Garden", src: "audio/aventure-a-beautiful-garden.mp3" },
+      { label: "Carefree", src: "audio/carefree.mp3" },
+      { label: "Evening Improv", src: "audio/evening-improvisation.mp3" },
     ],
   },
   Settings: {
