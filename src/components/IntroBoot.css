@@ -66,10 +66,20 @@
 .cobs-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8b95f; animation: cobs-blink 1.4s infinite; }
 @keyframes cobs-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
+/* Terminal block: centered card instead of a top-left-pinned strip, so it
+   doesn't look lost/off-balance on wide (desktop-mode) viewports while
+   staying identical on phone widths. */
 .cobs-term {
   position: absolute;
   inset: 0;
-  padding: 60px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.cobs-term-inner {
+  width: 100%;
+  max-width: 480px;
   font-family: 'SF Mono', Menlo, monospace;
   font-size: 13.5px;
   line-height: 1.9;
