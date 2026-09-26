@@ -26,6 +26,19 @@ export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
       { label: "Email me", url: "mailto:ansari.bilal10976@gmail.com" },
     ],
   },
+  "Shuffle Songs": {
+    // No url on these — tapping a track plays/pauses the local track
+    // (audio/ipod-track.mp3) instead of navigating. See the
+    // "Shuffle Songs" special-case in deskfolio-ipod-interactive.ts.
+    title: "Shuffle Songs",
+    items: [
+      { label: "Obsidian Mix" },
+      { label: "Night Coder" },
+      { label: "Thane Nights" },
+      { label: "Deploy Day" },
+      { label: "Client Calls" },
+    ],
+  },
   Settings: {
     title: "Terminal",
     items: [

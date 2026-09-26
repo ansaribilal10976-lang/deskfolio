@@ -168,6 +168,7 @@ function enterSubmenu(ul: HTMLElement, label: string) {
   const screen = ul.closest<HTMLElement>(".screen");
   if (!sub || !screen) return;
 
+  const isSongList = label === "Shuffle Songs";
   rootMenuHtml.set(ul, ul.innerHTML);
   ul.dataset.dfView = "sub";
   ul.dataset.dfParent = label;
@@ -176,7 +177,9 @@ function enterSubmenu(ul: HTMLElement, label: string) {
       const li = document.createElement("li");
       li.textContent = entry.label;
       if (entry.url) li.dataset.url = entry.url;
-      else li.classList.add("df-ipod-nolink");
+      // Song entries have no url on purpose (tapping plays audio instead
+      // of navigating) — they must NOT get the "dead link" dim treatment.
+      else if (!isSongList) li.classList.add("df-ipod-nolink");
       if (i === 0) li.classList.add("active");
       return li;
     }),
@@ -253,6 +256,26 @@ function handleClick(e: MouseEvent) {
   if (menuItem) {
     const ul = menuItem.closest<HTMLElement>(".menu");
     if (ul?.dataset.dfView === "sub") {
+      if (ul.dataset.dfParent === "Shuffle Songs") {
+        const items = getMenuItems(ul);
+        const wasActive = menuItem.classList.contains("active");
+        setActiveIndex(items, items.indexOf(menuItem));
+        const el = getAudio();
+        const playButton =
+          menuItem.closest(IPOD_SELECTOR)?.querySelector<HTMLButtonElement>(".pp") ?? null;
+        if (wasActive && !el.paused) {
+          el.pause();
+          if (playButton) setPlayGlyph(playButton, false);
+        } else {
+          el.currentTime = 0;
+          el.play().catch(() => {
+            // Autoplay can be blocked until the user has interacted with the
+            // page at all; tapping the track itself counts as interaction.
+          });
+          if (playButton) setPlayGlyph(playButton, true);
+        }
+        return;
+      }
       const url = menuItem.dataset.url;
       if (url) window.open(url, "_blank", "noopener,noreferrer");
       return;
