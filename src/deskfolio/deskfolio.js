@@ -2303,6 +2303,7 @@ function _t() {
         /* @__PURE__ */ e("li", { className: "s", children: "Extras" }),
         /* @__PURE__ */ e("li", { className: "s", children: "Settings" }),
         /* @__PURE__ */ e("li", { className: "active", children: "Shuffle Songs" }),
+        /* @__PURE__ */ e("li", { className: "s", children: "Get a Quote" }),
         /* @__PURE__ */ e("li", { children: "Backlight" })
       ] })
     ] }),

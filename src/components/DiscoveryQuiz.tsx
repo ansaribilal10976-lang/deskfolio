@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './DiscoveryQuiz.css'
 
 type Biz = 'Business site' | 'Real estate listing' | 'Personal portfolio'
@@ -18,6 +18,12 @@ export default function DiscoveryQuiz() {
   const [budget, setBudget] = useState<Budget | null>(null)
   const [timeline, setTimeline] = useState<Timeline | null>(null)
 
+  useEffect(() => {
+    const openQuiz = () => setOpen(true)
+    window.addEventListener('df-open-quiz', openQuiz)
+    return () => window.removeEventListener('df-open-quiz', openQuiz)
+  }, [])
+
   function reset() {
     setStep(1)
     setBiz(null)
@@ -32,10 +38,6 @@ export default function DiscoveryQuiz() {
 
   return (
     <>
-      <button className="dq-launcher" onClick={() => setOpen(true)}>
-        ✦ Get an instant quote
-      </button>
-
       {open && (
         <div className="dq-overlay" onClick={close}>
           <div className="dq-card" onClick={(e) => e.stopPropagation()}>
