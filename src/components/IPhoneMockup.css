@@ -1,0 +1,123 @@
+.iph-shell {
+  position: fixed;
+  z-index: 58;
+  top: 90px;
+  right: 16px;
+  width: 148px;
+  height: 300px;
+  background: linear-gradient(160deg, #8a8d92, #4d4f53);
+  border-radius: 34px;
+  padding: 6px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+.iph-shell::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 28px;
+  background: #000;
+  z-index: -1;
+}
+.iph-notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 14px;
+  background: #000;
+  border-radius: 999px;
+  z-index: 5;
+}
+
+.iph-lock, .iph-chat {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, #2a2440, #0c0c10 75%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.iph-lock {
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.iph-lock-time { font-size: 30px; font-weight: 600; margin-top: 20px; }
+.iph-lock-sub { font-size: 10px; letter-spacing: 1.5px; color: #b9b9c2; text-transform: uppercase; }
+.iph-unlock {
+  position: absolute;
+  bottom: 16px;
+  background: transparent;
+  border: none;
+  color: #d8d9de;
+  font-size: 9.5px;
+  animation: iph-bounce 1.8s infinite;
+}
+@keyframes iph-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+.iph-chat-header {
+  padding: 22px 10px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.iph-avatar {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #8f8ff0; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+}
+.iph-chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.iph-bubble {
+  max-width: 85%;
+  padding: 6px 9px;
+  border-radius: 12px;
+  font-size: 9.5px;
+  line-height: 1.35;
+}
+.iph-bubble-bilal { align-self: flex-start; background: #2c2c30; }
+.iph-bubble-me { align-self: flex-end; background: #8f8ff0; }
+
+.iph-chat-input {
+  display: flex;
+  gap: 5px;
+  padding: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.iph-chat-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: #fff;
+  font-size: 9.5px;
+}
+.iph-chat-input button {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #8f8ff0; color: #fff; border: none;
+  font-size: 11px; line-height: 1; cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .iph-shell { width: 180px; height: 360px; top: 110px; right: 30px; }
+  .iph-lock-time { font-size: 36px; }
+}
