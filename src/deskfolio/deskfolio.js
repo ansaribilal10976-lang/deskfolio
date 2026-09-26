@@ -1930,55 +1930,16 @@ const Ve = (t, r, a) => [
   { id: "matblue", name: "Blue mat", swatch: "#2f5a6f", style: { backgroundColor: "#2f5a6f", backgroundImage: Ve("#36728c", "#284c5c", "#203f4d"), "--df-cast": "rgba(14, 28, 36, 0.5)" } },
   { id: "matpink", name: "Pink mat", swatch: "#a85d72", style: { backgroundColor: "#a85d72", backgroundImage: Ve("#b56a80", "#8c4a5e", "#76414f"), "--df-cast": "rgba(70, 30, 44, 0.42)" } },
   {
-    id: "pinkscene",
-    name: "Pink scene",
-    swatch: "#f9c5d5",
+    id: "dark-wolf",
+    name: "Wolf profile",
+    swatch: "#2b2b2b",
     style: {
-      backgroundColor: "#f9c5d5",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 247, 226, 0.06) 0%, rgba(94, 48, 68, 0.06) 52%, rgba(94, 48, 68, 0.31) 100%), linear-gradient(rgba(235, 139, 174, 0.24), rgba(218, 119, 157, 0.3)), url('${DF_BASE}backgrounds/pink-desk-scene.webp')`,
+      backgroundColor: "#0c0c0c",
+      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.05) 52%, rgba(0, 0, 0, 0.3) 100%), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('${DF_BASE}backgrounds/dark-wolf.webp')`,
       backgroundSize: "100% 100%, 100% 100%, cover",
       backgroundPosition: "center center, center center, center center",
       backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(98, 45, 66, 0.36)"
-    }
-  },
-  {
-    id: "cream-botanical",
-    name: "Cream botanical",
-    swatch: "#eeefdc",
-    style: {
-      backgroundColor: "#eeefdc",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 250, 232, 0.05) 0%, rgba(72, 82, 58, 0.05) 52%, rgba(72, 82, 58, 0.24) 100%), linear-gradient(rgba(223, 226, 205, 0.18), rgba(201, 211, 188, 0.23)), url('${DF_BASE}backgrounds/cream-botanical.webp')`,
-      backgroundSize: "100% 100%, 100% 100%, cover",
-      backgroundPosition: "center center, center center, center center",
-      backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(64, 80, 58, 0.32)"
-    }
-  },
-  {
-    id: "sky-cloud-grid",
-    name: "Sky cloud",
-    swatch: "#b1d4f3",
-    style: {
-      backgroundColor: "#b1d4f3",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 255, 244, 0.05) 0%, rgba(42, 74, 108, 0.05) 52%, rgba(42, 74, 108, 0.26) 100%), linear-gradient(rgba(112, 166, 214, 0.16), rgba(86, 146, 202, 0.22)), url('${DF_BASE}backgrounds/sky-cloud-grid.webp')`,
-      backgroundSize: "100% 100%, 100% 100%, cover",
-      backgroundPosition: "center center, center center, center center",
-      backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(45, 80, 116, 0.34)"
-    }
-  },
-  {
-    id: "blue-cute-scene",
-    name: "Blue scene",
-    swatch: "#91c7fe",
-    style: {
-      backgroundColor: "#91c7fe",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 252, 236, 0.05) 0%, rgba(32, 72, 112, 0.05) 52%, rgba(32, 72, 112, 0.28) 100%), linear-gradient(rgba(95, 157, 222, 0.18), rgba(70, 132, 202, 0.24)), url('${DF_BASE}backgrounds/blue-cute-scene.webp')`,
-      backgroundSize: "100% 100%, 100% 100%, cover",
-      backgroundPosition: "center center, center center, center center",
-      backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(38, 75, 118, 0.36)"
+      "--df-cast": "rgba(0, 0, 0, 0.45)"
     }
   },
   {

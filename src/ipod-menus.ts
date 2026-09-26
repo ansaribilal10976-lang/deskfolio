@@ -23,7 +23,7 @@ export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
     title: "Extras",
     items: [
       { label: "GitHub", url: "https://github.com/ansaribilal10976-lang" },
-      { label: "Email me", url: "mailto:ba7992550@gmail.com" },
+      { label: "Email me", url: "mailto:ansari.bilal10976@gmail.com" },
     ],
   },
   Settings: {
