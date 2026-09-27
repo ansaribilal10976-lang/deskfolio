@@ -6,10 +6,6 @@ import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
-import RotaryPhone from './components/RotaryPhone'
-import StickyNote3D from './components/StickyNote3D'
-import IPhoneMockup from './components/IPhoneMockup'
-import DiscoveryQuiz from './components/DiscoveryQuiz'
 
 export default function App() {
   const [lightsOn, setLightsOn] = useState(true)
@@ -30,15 +26,8 @@ export default function App() {
           ariaLabel="Toggle the room light"
         />
       </div>
-      {!showIntro && (
-        <>
-          <RotaryPhone />
-          <StickyNote3D />
-          <IPhoneMockup />
-          <DiscoveryQuiz />
-        </>
-      )}
       {showIntro && <IntroBoot onDone={() => setShowIntro(false)} />}
     </>
   )
 }
+

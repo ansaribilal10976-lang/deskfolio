@@ -73,20 +73,22 @@ export default function IntroBoot({ onDone }: { onDone: () => void }) {
 
       {phase !== 'idle' && (
         <div className="cobs-term">
-          <div className="cobs-ln cobs-on">
-            <span className="cobs-prompt">$</span> obsidian build --prod
-          </div>
-          {typed.map((t, i) => (
-            <div key={i} className={`cobs-ln ${t ? 'cobs-on' : ''}`}>
-              {t}
+          <div className="cobs-term-inner">
+            <div className="cobs-ln cobs-on">
+              <span className="cobs-prompt">$</span> obsidian build --prod
             </div>
-          ))}
-          <div className="cobs-barTrack">
-            <div className="cobs-barFill" style={{ width: `${pct}%` }} />
-          </div>
-          <div className="cobs-pct">{pct > 0 ? `${pct}%` : ''}</div>
-          <div className={`cobs-done ${buildDone ? 'cobs-on' : ''}`}>
-            ✓ build complete 100%
+            {typed.map((t, i) => (
+              <div key={i} className={`cobs-ln ${t ? 'cobs-on' : ''}`}>
+                {t}
+              </div>
+            ))}
+            <div className="cobs-barTrack">
+              <div className="cobs-barFill" style={{ width: `${pct}%` }} />
+            </div>
+            <div className="cobs-pct">{pct > 0 ? `${pct}%` : ''}</div>
+            <div className={`cobs-done ${buildDone ? 'cobs-on' : ''}`}>
+              ✓ build complete 100%
+            </div>
           </div>
         </div>
       )}

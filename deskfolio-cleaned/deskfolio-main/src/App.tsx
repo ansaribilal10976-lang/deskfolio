@@ -1,5 +1,3 @@
-// Vendored copy of deskfolio (dist build) so the notebook content, cover,
-// stickers, and links can be customized for Bilal Ansari.
 import { useEffect, useState } from 'react'
 import { PullCord } from 'pullcord'
 import 'pullcord/pullcord.css'
@@ -8,6 +6,8 @@ import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
+import IPhoneMockup from './components/IPhoneMockup'
+import DiscoveryQuiz from './components/DiscoveryQuiz'
 
 export default function App() {
   const [lightsOn, setLightsOn] = useState(true)
@@ -28,6 +28,12 @@ export default function App() {
           ariaLabel="Toggle the room light"
         />
       </div>
+      {!showIntro && (
+        <>
+          <IPhoneMockup />
+          <DiscoveryQuiz />
+        </>
+      )}
       {showIntro && <IntroBoot onDone={() => setShowIntro(false)} />}
     </>
   )

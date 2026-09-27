@@ -286,10 +286,6 @@ function handleClick(e: MouseEvent) {
       return;
     }
     const label = menuItem.textContent?.trim() ?? "";
-    if (label === "Get a Quote") {
-      window.dispatchEvent(new CustomEvent("df-open-quiz"))
-      return
-    }
     if (ul && label in IPOD_SUBMENUS) {
       enterSubmenu(ul, label);
       return;

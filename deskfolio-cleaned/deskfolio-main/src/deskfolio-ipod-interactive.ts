@@ -47,12 +47,15 @@ function getActiveIndex(items: HTMLLIElement[]): number {
 }
 
 let audio: HTMLAudioElement | null = null;
+let audioSrc: string | null = null;
 
-function getAudio(): HTMLAudioElement {
-  if (!audio) {
-    audio = new Audio(TRACK_SRC);
+function getAudio(src: string = TRACK_SRC): HTMLAudioElement {
+  if (!audio || audioSrc !== src) {
+    audio?.pause();
+    audio = new Audio(src);
     audio.loop = true;
     audio.volume = 0.55;
+    audioSrc = src;
   }
   return audio;
 }
@@ -180,6 +183,7 @@ function enterSubmenu(ul: HTMLElement, label: string) {
       // Song entries have no url on purpose (tapping plays audio instead
       // of navigating) — they must NOT get the "dead link" dim treatment.
       else if (!isSongList) li.classList.add("df-ipod-nolink");
+      if (entry.src) li.dataset.src = entry.src;
       if (i === 0) li.classList.add("active");
       return li;
     }),
@@ -260,7 +264,8 @@ function handleClick(e: MouseEvent) {
         const items = getMenuItems(ul);
         const wasActive = menuItem.classList.contains("active");
         setActiveIndex(items, items.indexOf(menuItem));
-        const el = getAudio();
+        const src = menuItem.dataset.src ?? TRACK_SRC;
+        const el = getAudio(src);
         const playButton =
           menuItem.closest(IPOD_SELECTOR)?.querySelector<HTMLButtonElement>(".pp") ?? null;
         if (wasActive && !el.paused) {
