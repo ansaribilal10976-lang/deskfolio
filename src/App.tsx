@@ -6,6 +6,7 @@ import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
+import PortfolioExtras from './components/PortfolioExtras'
 
 export default function App() {
   const [lightsOn, setLightsOn] = useState(true)
@@ -27,6 +28,7 @@ export default function App() {
         />
       </div>
       {showIntro && <IntroBoot onDone={() => setShowIntro(false)} />}
+      <PortfolioExtras />
     </>
   )
 }
