@@ -2178,6 +2178,48 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
     ] }, al.title)),
     /* @__PURE__ */ e("p", { className: "df-skills-sig", children: "still shipping — obsidian-studio@main" })
   ] }, "p1"),
+  /* @__PURE__ */ i("div", { className: "df-page", children: [
+    /* @__PURE__ */ e(st, { className: "df-doodle df-doodle--lilac", style: { top: 0, right: 4, width: 26, height: 26 } }),
+    /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "backend" }),
+    ...[
+      { tag: "album 03", title: "Data & auth", tone: "lilac", tracks: [["Supabase Postgres", "3:12"], ["Supabase Auth", "2:36"], ["Row-level security", "3:48"], ["RPC functions", "2:57"]] },
+      { tag: "album 04", title: "Automation", tone: "blush", tracks: [["Make.com flows", "3:21"], ["Gemini API", "2:44"], ["Groq / Llama 3.3", "3:03"], ["Gmail hooks", "2:15"]] }
+    ].map((al) => /* @__PURE__ */ i("div", { className: "df-album df-album--" + al.tone, children: [
+      /* @__PURE__ */ i("p", { className: "df-album-head", children: [
+        /* @__PURE__ */ e("span", { className: "df-album-tag", children: al.tag }),
+        /* @__PURE__ */ e("span", { className: "df-album-title", children: al.title })
+      ] }),
+      /* @__PURE__ */ e("ol", { className: "df-tracks", children: al.tracks.map((t, n) => /* @__PURE__ */ i("li", { className: "df-track", children: [
+        /* @__PURE__ */ i("span", { className: "df-track-l", children: [
+          /* @__PURE__ */ e("span", { className: "df-track-n", children: String(n + 1).padStart(2, "0") }),
+          /* @__PURE__ */ e("span", { className: "df-track-name", children: t[0] })
+        ] }),
+        /* @__PURE__ */ e("span", { className: "df-track-t", children: t[1] })
+      ] }, t[0])) })
+    ] }, al.title)),
+    /* @__PURE__ */ e("p", { className: "df-skills-sig", children: "the boring parts, done properly" })
+  ] }, "pb0"),
+  /* @__PURE__ */ i("div", { className: "df-page", children: [
+    /* @__PURE__ */ e(pe, { className: "df-doodle df-doodle--lilac", style: { top: 0, right: 4, width: 26, height: 26 } }),
+    /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "under the hood" }),
+    ...[
+      { tag: "now playing", title: "Client pipeline", tone: "lilac", tracks: [["Brief form", "supabase"], ["Proposal generator", "gemini + make"], ["Contract", "vercel"]] },
+      { tag: "bonus track", title: "Locked down", tone: "blush", tracks: [["RLS on every table", "postgres"], ["UUID public links", "no guessing"], ["Admin sign-in", "supabase auth"]] }
+    ].map((al) => /* @__PURE__ */ i("div", { className: "df-album df-album--" + al.tone, children: [
+      /* @__PURE__ */ i("p", { className: "df-album-head", children: [
+        /* @__PURE__ */ e("span", { className: "df-album-tag", children: al.tag }),
+        /* @__PURE__ */ e("span", { className: "df-album-title", children: al.title })
+      ] }),
+      /* @__PURE__ */ e("ol", { className: "df-tracks", children: al.tracks.map((t, n) => /* @__PURE__ */ i("li", { className: "df-track", children: [
+        /* @__PURE__ */ i("span", { className: "df-track-l", children: [
+          /* @__PURE__ */ e("span", { className: "df-track-n", children: String(n + 1).padStart(2, "0") }),
+          /* @__PURE__ */ e("span", { className: "df-track-name", children: t[0] })
+        ] }),
+        /* @__PURE__ */ e("span", { className: "df-track-t", children: t[1] })
+      ] }, t[0])) })
+    ] }, al.title)),
+    /* @__PURE__ */ e("p", { className: "df-skills-sig", children: "built it, audited it, locked it down" })
+  ] }, "pb1"),
   // spread 2 left: selected work
   /* @__PURE__ */ i("div", { className: "df-page", children: [
     /* @__PURE__ */ e("h3", { className: "df-hello", children: "selected work" }),
