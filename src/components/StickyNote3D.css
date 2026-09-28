@@ -1,0 +1,99 @@
+.snote-wrap {
+  position: fixed;
+  z-index: 55;
+  bottom: 26px;
+  left: 18px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  perspective: 600px;
+}
+
+.snote {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(160deg, #fff3a0, #ffe373);
+  color: #4a3f10;
+  padding: 14px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  transform-style: preserve-3d;
+  transition: transform 0.08s ease-out;
+  cursor: default;
+  border-radius: 2px;
+}
+.snote-text {
+  margin: 0;
+  font-family: var(--df-font-hand, cursive);
+  font-size: 15px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.snote-input {
+  width: 130px;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(20, 20, 22, 0.85);
+  color: #eee;
+  text-align: center;
+}
+.snote-input:focus { outline: 1px solid #e8b95f; }
+
+.snote-pin {
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 185, 95, 0.4);
+  background: rgba(24, 24, 27, 0.9);
+  color: #e8b95f;
+  cursor: pointer;
+}
+.snote-pin:active { transform: scale(0.95); animation: snote-pop 0.28s ease; }
+@keyframes snote-pop {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.snote-board {
+  margin-top: 4px;
+  width: 150px;
+  max-height: 120px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(90, 60, 30, 0.25);
+  border: 1px dashed rgba(232, 185, 95, 0.3);
+  border-radius: 8px;
+}
+.snote-mini {
+  width: 52px;
+  height: 52px;
+  background: #ffe373;
+  color: #4a3f10;
+  font-size: 8.5px;
+  line-height: 1.2;
+  padding: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  animation: snote-popin 0.3s ease;
+  font-family: var(--df-font-hand, cursive);
+}
+@keyframes snote-popin {
+  from { transform: scale(0.3); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (min-width: 900px) {
+  .snote-wrap { bottom: 34px; left: 34px; width: 170px; }
+  .snote, .snote-input, .snote-board { width: 150px; }
+  .snote { height: 150px; }
+}

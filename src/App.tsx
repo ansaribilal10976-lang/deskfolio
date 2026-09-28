@@ -6,7 +6,6 @@ import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
-import DiscoveryQuiz from './components/DiscoveryQuiz'
 import PortfolioExtras from './components/PortfolioExtras'
 
 export default function App() {
@@ -28,13 +27,9 @@ export default function App() {
           ariaLabel="Toggle the room light"
         />
       </div>
-      {!showIntro && (
-        <>
-          <DiscoveryQuiz />
-        </>
-      )}
       {showIntro && <IntroBoot onDone={() => setShowIntro(false)} />}
       <PortfolioExtras />
     </>
   )
 }
+

@@ -1,0 +1,70 @@
+.rphone {
+  position: fixed;
+  z-index: 60;
+  bottom: 26px;
+  right: 18px;
+  width: 76px;
+  height: auto;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
+}
+.rphone-icon { width: 100%; height: auto; }
+
+.rphone-ring { animation: rphone-shake 0.32s ease-in-out infinite; }
+@keyframes rphone-shake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(7deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(5deg); }
+}
+
+.rphone-badge {
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #e8b95f;
+  background: rgba(20, 20, 22, 0.85);
+  border: 1px solid rgba(232, 185, 95, 0.4);
+  padding: 2px 8px;
+  border-radius: 999px;
+  animation: rphone-blink 1s infinite;
+}
+@keyframes rphone-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.rphone-answered .rphone-icon { filter: none; }
+
+.rphone-greeting {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 10px;
+  width: 210px;
+  background: rgba(24, 24, 27, 0.96);
+  border: 1px solid rgba(232, 185, 95, 0.35);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  color: #d8d9de;
+  font-size: 12.5px;
+  line-height: 1.5;
+  animation: rphone-fadein 0.35s ease;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+.rphone-greeting p { margin: 6px 0 0; }
+.rphone-status { font-size: 10px; letter-spacing: 1px; color: #7bd88f; text-transform: uppercase; }
+
+@keyframes rphone-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 900px) {
+  .rphone { bottom: 34px; right: 34px; width: 92px; }
+}
