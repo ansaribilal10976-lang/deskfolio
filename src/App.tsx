@@ -6,7 +6,6 @@ import './deskfolio/deskfolio.css'
 import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
-import IPhoneMockup from './components/IPhoneMockup'
 import DiscoveryQuiz from './components/DiscoveryQuiz'
 import PortfolioExtras from './components/PortfolioExtras'
 
@@ -31,7 +30,6 @@ export default function App() {
       </div>
       {!showIntro && (
         <>
-          <IPhoneMockup />
           <DiscoveryQuiz />
         </>
       )}
