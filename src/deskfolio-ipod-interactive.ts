@@ -21,42 +21,6 @@ const TRACK_SRC = "audio/ipod-track.mp3";
 const HINT_SEEN_KEY = "df-ipod-hint-seen";
 const HINT_SEEN_CLASS = "df-ipod-seen";
 
-// --- Backlight: tapping "Backlight" cycles the screen colour ---------------
-// The choice lives on <html data-ipod-theme>, so the desk sticker and the
-// zoomed copy always match (CSS in App.css). "classic" = no attribute.
-const THEME_KEY = "df-ipod-theme";
-const BACKLIGHT_THEMES = [
-  { id: "classic", label: "Classic" },
-  { id: "amber", label: "Amber" },
-  { id: "mint", label: "Mint" },
-  { id: "ice", label: "Ice blue" },
-] as const;
-
-function applyBacklight(id: string) {
-  const root = document.documentElement;
-  if (id === "classic") root.removeAttribute("data-ipod-theme");
-  else root.setAttribute("data-ipod-theme", id);
-}
-
-function cycleBacklight(screen: HTMLElement | null) {
-  const current = document.documentElement.getAttribute("data-ipod-theme") ?? "classic";
-  const idx = BACKLIGHT_THEMES.findIndex((t) => t.id === current);
-  const next = BACKLIGHT_THEMES[(idx + 1) % BACKLIGHT_THEMES.length];
-  applyBacklight(next.id);
-  try {
-    localStorage.setItem(THEME_KEY, next.id);
-  } catch {
-    /* storage unavailable: theme resets next visit */
-  }
-  // Flash the theme name in the screen header (zoomed iPod shows data-title).
-  if (screen) {
-    screen.dataset.title = next.label;
-    window.setTimeout(() => {
-      if (screen.dataset.title === next.label) delete screen.dataset.title;
-    }, 900);
-  }
-}
-
 // The "tap me" bubble on the desk sticker (pure CSS, see App.css) disappears
 // for good once the visitor has opened the iPod once.
 function markHintSeen() {
@@ -322,12 +286,6 @@ function handleClick(e: MouseEvent) {
       return;
     }
     const label = menuItem.textContent?.trim() ?? "";
-    if (label === "Backlight") {
-      const rootItems = getMenuItems(menuItem.closest(IPOD_SELECTOR) ?? document);
-      setActiveIndex(rootItems, rootItems.indexOf(menuItem));
-      cycleBacklight(menuItem.closest<HTMLElement>(".screen"));
-      return;
-    }
     if (ul && label in IPOD_SUBMENUS) {
       enterSubmenu(ul, label);
       return;
@@ -382,8 +340,6 @@ export function initIpodSticker() {
     if (localStorage.getItem(HINT_SEEN_KEY)) {
       document.documentElement.classList.add(HINT_SEEN_CLASS);
     }
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved && BACKLIGHT_THEMES.some((t) => t.id === saved)) applyBacklight(saved);
   } catch {
     /* ignore */
   }

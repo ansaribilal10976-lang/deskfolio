@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import './PortfolioExtras.css'
 import { TESTIMONIALS } from './testimonials'
+import RobotSticker from './RobotSticker'
 
 const WHATSAPP_NUMBER = '919867529225' // country code 91 + number
 const EMAIL = 'ba7992550@gmail.com'
@@ -14,7 +15,7 @@ export default function PortfolioExtras() {
   const [name, setName] = useState('')
   const [type, setType] = useState(PROJECT_TYPES[0])
   const [message, setMessage] = useState('')
-  const fabRef = useRef<HTMLButtonElement>(null)
+  const fabRef = useRef<HTMLDivElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
 
   const hasReviews = TESTIMONIALS.length > 0
@@ -64,19 +65,13 @@ export default function PortfolioExtras() {
 
   return (
     <div className="pe-root">
-      <button
+      <RobotSticker
         ref={fabRef}
-        type="button"
-        className="pe-fab"
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        onClick={() => {
+        onOpen={() => {
           setTab('contact')
           setOpen(true)
         }}
-      >
-        <span aria-hidden="true">✉</span> Let&apos;s talk
-      </button>
+      />
 
       {open && (
         <div

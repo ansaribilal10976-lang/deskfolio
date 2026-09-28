@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 226">
+  <defs>
+    <radialGradient id="rb-vis" cx="50%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#2b40d6"/>
+      <stop offset=".55" stop-color="#121e9a"/>
+      <stop offset="1" stop-color="#0a1268"/>
+    </radialGradient>
+    <linearGradient id="rb-chest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4fdcff"/>
+      <stop offset="1" stop-color="#12b4f5"/>
+    </linearGradient>
+    <clipPath id="rb-headclip"><ellipse cx="100" cy="76" rx="68" ry="54"/></clipPath>
+    <clipPath id="rb-bodyclip"><path d="M72 124 C62 158 66 196 88 204 Q100 209 112 204 C134 196 138 158 128 124 Z"/></clipPath>
+    <rect id="rb-nub" x="76" y="12" width="48" height="20" rx="10"/>
+    <path id="rb-finl" d="M24 68 C21 46 25 33 32 26 C41 35 43 53 41 68 Z"/>
+    <path id="rb-finr" d="M176 68 C179 46 175 33 168 26 C159 35 157 53 159 68 Z"/>
+    <rect id="rb-earl" x="19" y="62" width="27" height="48" rx="13.5"/>
+    <rect id="rb-earr" x="154" y="62" width="27" height="48" rx="13.5"/>
+    <rect id="rb-arml" x="42" y="132" width="26" height="58" rx="13" transform="rotate(30 55 161)"/>
+    <rect id="rb-armr" x="136" y="108" width="26" height="58" rx="13" transform="rotate(40 149 137)"/>
+    <path id="rb-body" d="M72 124 C62 158 66 196 88 204 Q100 209 112 204 C134 196 138 158 128 124 Z"/>
+    <ellipse id="rb-head" cx="100" cy="76" rx="68" ry="54"/>
+  </defs>
+
+  <!-- sticker border -->
+  <g fill="#fff" stroke="#fff" stroke-width="18" stroke-linejoin="round">
+    <use href="#rb-nub"/><use href="#rb-finl"/><use href="#rb-finr"/>
+    <use href="#rb-earl"/><use href="#rb-earr"/>
+    <use href="#rb-arml"/><use href="#rb-armr"/>
+    <use href="#rb-body"/><use href="#rb-head"/>
+  </g>
+
+  <g stroke="#1c2790" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+    <use href="#rb-nub" fill="#fff"/>
+    <use href="#rb-finl" fill="#5cc8fb"/><use href="#rb-finr" fill="#5cc8fb"/>
+    <use href="#rb-earl" fill="#fff"/><use href="#rb-earr" fill="#fff"/>
+    <use href="#rb-arml" fill="#fff"/><use href="#rb-armr" fill="#fff"/>
+
+    <!-- body -->
+    <use href="#rb-body" fill="#c9c9f0"/>
+    <g clip-path="url(#rb-bodyclip)"><ellipse cx="100" cy="148" rx="44" ry="46" fill="#fff" stroke="none"/></g>
+    <path d="M84 150 H116 Q121 150 119 155 Q113 179 100 179 Q87 179 81 155 Q79 150 84 150 Z" fill="url(#rb-chest)" stroke-width="3.5"/>
+    <path d="M89 156 Q100 152 111 156" fill="none" stroke="#c9f4ff" stroke-width="3" opacity=".9"/>
+
+    <!-- head -->
+    <use href="#rb-head" fill="#c9c9f0"/>
+    <g clip-path="url(#rb-headclip)"><ellipse cx="100" cy="70" rx="66" ry="49" fill="#fff" stroke="none"/></g>
+
+    <!-- visor -->
+    <ellipse cx="100" cy="80" rx="55" ry="36" fill="url(#rb-vis)" stroke-width="4"/>
+    <path d="M62 66 Q76 52 96 51" fill="none" stroke="#fff" stroke-width="3.5" opacity=".3"/>
+    <!-- happy eyes -->
+    <path d="M71 84 Q81 71 91 84" fill="none" stroke="#3adcff" stroke-width="5.5"/>
+    <path d="M109 84 Q119 71 129 84" fill="none" stroke="#3adcff" stroke-width="5.5"/>
+    <!-- blush -->
+    <ellipse cx="66" cy="94" rx="6" ry="3.5" fill="#ff8fc7" opacity=".55" stroke="none"/>
+    <ellipse cx="134" cy="94" rx="6" ry="3.5" fill="#ff8fc7" opacity=".55" stroke="none"/>
+  </g>
+</svg>
