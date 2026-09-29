@@ -47,11 +47,34 @@ export default function PortfolioExtras() {
   useEffect(() => {
     if (!open) return
     panelRef.current?.focus({ preventScroll: true })
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key === 'Escape') {
+        close()
+        return
+      }
+      if (e.key !== 'Tab' || !panelRef.current) return
+      const focusable = panelRef.current.querySelectorAll<HTMLElement>(
+        'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      )
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement
+      if (e.shiftKey && (active === first || active === panelRef.current)) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKey)
+    }
   }, [open, close])
 
   const valid = name.trim().length >= 2 && message.trim().length >= 5
@@ -97,6 +120,8 @@ export default function PortfolioExtras() {
                 <button
                   type="button"
                   role="tab"
+                  id="pe-tab-contact"
+                  aria-controls="pe-panel-body"
                   aria-selected={tab === 'contact'}
                   className={tab === 'contact' ? 'is-active' : ''}
                   onClick={() => setTab('contact')}
@@ -106,6 +131,8 @@ export default function PortfolioExtras() {
                 <button
                   type="button"
                   role="tab"
+                  id="pe-tab-reviews"
+                  aria-controls="pe-panel-body"
                   aria-selected={tab === 'reviews'}
                   className={tab === 'reviews' ? 'is-active' : ''}
                   onClick={() => setTab('reviews')}
@@ -116,7 +143,7 @@ export default function PortfolioExtras() {
             ) : null}
 
             {tab === 'contact' || !hasReviews ? (
-              <div className="pe-body">
+              <div className="pe-body" id="pe-panel-body" role={hasReviews ? 'tabpanel' : undefined} aria-labelledby={hasReviews ? 'pe-tab-contact' : undefined}>
                 <h2 id="pe-title" className="pe-title">
                   Got a project?
                 </h2>
@@ -177,10 +204,10 @@ export default function PortfolioExtras() {
                     Send by email
                   </a>
                 </div>
-                {!valid && <p className="pe-hint">Naam aur message bhar do, phir buttons chalenge.</p>}
+                {!valid && <p className="pe-hint">Add your name and a short message to enable the buttons.</p>}
               </div>
             ) : (
-              <div className="pe-body">
+              <div className="pe-body" id="pe-panel-body" role="tabpanel" aria-labelledby="pe-tab-reviews">
                 <h2 id="pe-title" className="pe-title">
                   Kind words
                 </h2>
