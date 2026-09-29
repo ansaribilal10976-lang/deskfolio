@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
+
+# packaging junk
+deskfolio-cleaned/
+deskfolio-main/
+*.pdf

@@ -4,7 +4,7 @@ import { TESTIMONIALS } from './testimonials'
 import RobotSticker from './RobotSticker'
 
 const WHATSAPP_NUMBER = '919867529225' // country code 91 + number
-const EMAIL = 'ba7992550@gmail.com'
+const EMAIL = 'ansari.bilal10976@gmail.com'
 const PROJECT_TYPES = ['Website', 'Web app', 'E-commerce store', 'Something else']
 
 type Tab = 'contact' | 'reviews'

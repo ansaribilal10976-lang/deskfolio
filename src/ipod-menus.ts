@@ -7,7 +7,7 @@
 // Keep labels short (~12 chars): the iPod screen is tiny.
 //
 // Kept in sync with the "selected work" pages in the notebook
-// (deskfolio/deskfolio.js) — same 3 projects, same URLs. Update both
+// (deskfolio/deskfolio.js) — same project list, same URLs. Update both
 // places if a project is added, removed, or its URL changes.
 
 export type IpodEntry = { label: string; url?: string; src?: string };
@@ -44,7 +44,7 @@ export const IPOD_SUBMENUS: Record<string, IpodSubmenu> = {
       { label: "$ whoami" },
       { label: "bilal_ansari" },
       { label: "$ cat stack.txt" },
-      { label: "Next.js / React / Supabase" },
+      { label: "React / Vite / Supabase" },
       { label: "$ ls clients/" },
       { label: "stonemountgroup.in ..." },
       { label: "$ open instagram", url: "https://instagram.com/obsidian.studio.web" },

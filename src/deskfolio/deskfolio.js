@@ -797,30 +797,6 @@ const ke = {
     ]
   },
   {
-    // Grand Line desk: straw hat crew scatter
-    id: "onepiece",
-    name: "One Piece",
-    thumb: DF_BASE + "stickers/sticker-onepiece.svg",
-    items: [
-      { src: B + "sticker-onepiece-strawhat.svg", width: "clamp(78px, 17vw, 240px)", rotate: -8, pos: { top: "6%", left: "3.5%" } },
-      // straw hat anchor (top-left)
-      { src: B + "sticker-onepiece-ship.svg", width: "clamp(62px, 14vw, 190px)", rotate: 6, pos: { top: "7%", right: "4.5%" } },
-      // little caravel (top-right)
-      { src: B + "sticker-onepiece-wanted.svg", width: "clamp(54px, 12vw, 165px)", rotate: -5, pos: { bottom: "8%", left: "4.5%" } },
-      // wanted poster (bottom-left)
-      { src: B + "sticker-op-zoro.png", width: "clamp(48px, 11vw, 150px)", rotate: -7, pos: { top: "41%", left: "13%" }, stuck: !0 },
-      // chibi zoro (mid-left)
-      { src: B + "sticker-op-luffy.png", width: "clamp(56px, 12.5vw, 175px)", rotate: 6, pos: { top: "38%", right: "9%" } },
-      // chibi luffy (mid-right)
-      { src: B + "sticker-onepiece-swords.svg", width: "clamp(52px, 11.5vw, 158px)", rotate: -12, pos: { bottom: "27%", right: "3.5%" } },
-      // zoro's katanas (bottom-right)
-      { src: B + "sticker-onepiece-logpose.svg", width: "clamp(46px, 10.5vw, 142px)", rotate: -4, pos: { bottom: "34%", right: "26%" } },
-      // log pose
-      { src: B + "sticker-note-yellow.svg", width: "clamp(44px, 10vw, 130px)", rotate: 5, pos: { bottom: "13%", left: "24%" }, stuck: !0 }
-      // sticky note
-    ]
-  },
-  {
     id: "stationery",
     name: "Stationery",
     thumb: DF_BASE + "stickers/sticker-stationery.svg",
@@ -845,14 +821,14 @@ const ke = {
 var yt;
 const dt = [
   ...new Set(
-    (((yt = ve.find((t) => t.id === "onepiece")) == null ? void 0 : yt.items) ?? []).map((t) => t.src).filter((t) => !t.startsWith("__component:"))
+    (((yt = ve.find((t) => t.id === "workspace")) == null ? void 0 : yt.items) ?? []).map((t) => t.src).filter((t) => !t.startsWith("__component:"))
     // skip component placeholders
   ),
   DF_BASE + "stickers/devices/github-ipad.svg",
   // dev-activity iPad shell
   DF_BASE + "profile.svg"
   // about-page avatar
-], c0 = ["onepiece", "workspace", "journal", "stationery"].map((t) => ve.find((r) => r.id === t)).filter((t) => !!t);
+], c0 = ["workspace", "journal", "stationery"].map((t) => ve.find((r) => r.id === t)).filter((t) => !!t);
 function s0({ value: t, onChange: r }) {
   const a = re();
   return /* @__PURE__ */ e("div", { className: "df-sticker-picker", role: "radiogroup", "aria-label": "Table sticker set", children: c0.map((n) => {
@@ -978,24 +954,6 @@ const Mt = [
       "sticker-cute-pop-reindeer.svg",
       "sticker-cute-pop-skull.svg",
       "sticker-cute-pop-unicorn.svg"
-    ]
-  },
-  {
-    id: "onepiece",
-    name: "One Piece",
-    files: [
-      "sticker-op-luffy.png",
-      "sticker-op-luffy-head.png",
-      "sticker-op-zoro.png",
-      "sticker-op-chopper.svg",
-      "sticker-op-logo.png",
-      "sticker-onepiece-strawhat.svg",
-      "sticker-onepiece-jollyroger.svg",
-      "sticker-onepiece-devilfruit.svg",
-      "sticker-onepiece-logpose.svg",
-      "sticker-onepiece-ship.svg",
-      "sticker-onepiece-wanted.svg",
-      "sticker-onepiece-swords.svg"
     ]
   },
   {
@@ -1943,34 +1901,6 @@ const Ve = (t, r, a) => [
     }
   },
   {
-    // Megha's One Piece wallpaper, pre-blurred
-    id: "op-red",
-    name: "Grand Line red",
-    swatch: "#ffffff",
-    style: {
-      backgroundColor: "#efebec",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 252, 236, 0.05) 0%, rgba(32, 72, 112, 0.05) 52%, rgba(32, 72, 112, 0.28) 100%), linear-gradient(rgba(95, 157, 222, 0.18), rgba(70, 132, 202, 0.24)), url('${DF_BASE}backgrounds/one-piece.png')`,
-      backgroundSize: "100% 100%, 100% 100%, cover",
-      backgroundPosition: "center center, center center, center center",
-      backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(50, 10, 18, 0.44)"
-    }
-  },
-  {
-    // Megha's One Piece wallpaper, pre-blurred
-    id: "op-dark",
-    name: "Lights-out Luffy",
-    swatch: "#1c1c1e",
-    style: {
-      backgroundColor: "#1c1c1e",
-      backgroundImage: `radial-gradient(62% 58% at 50% 52%, rgba(255, 236, 200, 0.05) 0%, rgba(8, 8, 10, 0.12) 52%, rgba(8, 8, 10, 0.5) 100%), linear-gradient(rgba(24, 24, 28, 0.2), rgba(12, 12, 16, 0.3)), url('${DF_BASE}backgrounds/op-dark-luffy.webp')`,
-      backgroundSize: "100% 100%, 100% 100%, cover",
-      backgroundPosition: "center center, center center, center center",
-      backgroundRepeat: "no-repeat, no-repeat, no-repeat",
-      "--df-cast": "rgba(6, 6, 10, 0.55)"
-    }
-  },
-  {
     id: "wood",
     name: "Wood desk",
     swatch: "#a9794e",
@@ -2006,10 +1936,6 @@ const gt = [
 ], gtOld = [
   { name: "Pink Scene", coverId: "milk-mint", bgId: "pinkscene" },
   // default
-  { name: "Grand Line", coverId: "butter", bgId: "op-red" },
-  // straw-hat yellow on wanted-poster red
-  { name: "Lights Out", coverId: "coral", bgId: "op-dark" },
-  // coral on midnight luffy
   { name: "Strawberry Matcha", coverId: "powder", bgId: "mat" },
   // pink on matcha green
   { name: "Lemon Lagoon", coverId: "butter", bgId: "matblue" },
@@ -2231,10 +2157,44 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite website for a real estate developer." })
     ] }),
   ] }, "p2"),
-  // spread 2 right: more work
+  // spread 2 right: services
   /* @__PURE__ */ i("div", { className: "df-page", children: [
     /* @__PURE__ */ e(pe, { className: "df-doodle df-doodle--butter", style: { bottom: 16, right: 12, width: 22, height: 22 } }),
-    /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "more work" }),
+    /* @__PURE__ */ e("h3", { className: "df-hello df-hello--lilac", children: "what I build" }),
+    /* @__PURE__ */ i("ul", { className: "df-xp", children: [
+      /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
+        /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
+        /* @__PURE__ */ i("div", { children: [
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Business websites" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "local shops, clinics, restaurants" })
+        ] })
+      ] }),
+      /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
+        /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
+        /* @__PURE__ */ i("div", { children: [
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Real estate sites" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "developers, projects, enquiry flows" })
+        ] })
+      ] }),
+      /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
+        /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
+        /* @__PURE__ */ i("div", { children: [
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Portfolios & landing pages" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "fast, mobile-first, easy to update" })
+        ] })
+      ] }),
+      /* @__PURE__ */ i("li", { className: "df-xp-row", children: [
+        /* @__PURE__ */ e("span", { className: "df-xp-dot", "aria-hidden": "true" }),
+        /* @__PURE__ */ i("div", { children: [
+          /* @__PURE__ */ e("p", { className: "df-xp-role", children: "Client intake & payments" }),
+          /* @__PURE__ */ e("p", { className: "df-xp-meta", children: "Supabase-backed forms and pipelines" })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ i("p", { className: "df-sig", children: [
+      "open for new projects ",
+      /* @__PURE__ */ e("span", { className: "df-heart", "aria-hidden": "true", children: "◆" })
+    ] })
   ] }, "p3"),
   // spread 3 left: experience timeline
   /* @__PURE__ */ i("div", { className: "df-page", children: [
@@ -2306,7 +2266,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
       {
         className: "df-edit--body",
         placeholder: "a little note…",
-        initial: "This portfolio is a book you can actually open. It blooms apart, turns its pages on a spring, and shuts again — with a straw hat or two on the desk. Thanks for flipping through my little corner of the Grand Line."
+        initial: "This portfolio is a book you can actually open. It blooms apart, turns its pages on a spring, and shuts again. Built on the open-source DeskFolio template by FeralUI, restyled and extended by Obsidian Studio. Music: Carefree and Evening Improvisation by Kevin MacLeod (incompetech.com), CC BY 4.0."
       }
     ) }),
     /* @__PURE__ */ i("p", { className: "df-sig", children: [

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ansaribilal10976-lang.github.io/deskfolio/sitemap.xml
