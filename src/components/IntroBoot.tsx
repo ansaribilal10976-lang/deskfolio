@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './IntroBoot.css'
+import { blip, typeSound } from './sound'
 
 const LINES = [
   'resolving modules…',
@@ -59,6 +60,7 @@ export default function IntroBoot({ onDone }: { onDone: () => void }) {
   async function typeLine(i: number, text: string) {
     for (let c = 1; c <= text.length; c++) {
       if (skipped.current) return
+      if (c % 2 === 1) typeSound()
       setTyped((prev) => {
         const next = [...prev]
         next[i] = text.slice(0, c)
@@ -71,6 +73,7 @@ export default function IntroBoot({ onDone }: { onDone: () => void }) {
   async function run() {
     if (running.current) return
     running.current = true
+    typeSound(true)
     setPhase('boot')
     await wait(200)
     for (let i = 0; i < LINES.length; i++) {
@@ -108,6 +111,7 @@ export default function IntroBoot({ onDone }: { onDone: () => void }) {
     })
 
     setBuildDone(true)
+    blip(true)
     setShowSkip(false)
     await wait(550)
     setPhase('flash')

@@ -7,6 +7,11 @@ import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
 import PortfolioExtras from './components/PortfolioExtras'
+import MumbaiClock from './components/MumbaiClock'
+import HiddenTerminal from './components/HiddenTerminal'
+import AvailabilityBadge from './components/AvailabilityBadge'
+import SoundToggle from './components/SoundToggle'
+import { initTypingSounds } from './components/sound'
 
 const INTRO_KEY = 'obs-intro-seen'
 const INTRO_TTL = 7 * 24 * 60 * 60 * 1000
@@ -28,12 +33,20 @@ function markIntroSeen() {
   }
 }
 
+// Between 11pm and 5am (visitor's own clock) the room starts with the lights off.
+// The pull cord still toggles it any time.
+function isNightForVisitor(): boolean {
+  const h = new Date().getHours()
+  return h >= 23 || h < 5
+}
+
 export default function App() {
-  const [lightsOn, setLightsOn] = useState(true)
+  const [lightsOn, setLightsOn] = useState(() => !isNightForVisitor())
   const [showIntro, setShowIntro] = useState(() => !introSeenRecently())
 
   useEffect(() => {
     initIpodSticker()
+    return initTypingSounds()
   }, [])
 
   return (
@@ -54,6 +67,10 @@ export default function App() {
           }}
         />}
       <PortfolioExtras />
+      <MumbaiClock />
+      <AvailabilityBadge />
+      <SoundToggle />
+      <HiddenTerminal />
     </>
   )
 }
