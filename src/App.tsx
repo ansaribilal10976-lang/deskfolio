@@ -16,6 +16,8 @@ const INTRO_KEY = 'obs-intro-seen'
 const INTRO_TTL = 7 * 24 * 60 * 60 * 1000
 
 function introSeenRecently(): boolean {
+  // Open the site with ?intro (e.g. .../deskfolio/?intro) to force the intro.
+  if (new URLSearchParams(window.location.search).has('intro')) return false
   try {
     const t = Number(localStorage.getItem(INTRO_KEY))
     return t > 0 && Date.now() - t < INTRO_TTL
