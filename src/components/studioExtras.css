@@ -1,64 +1,3 @@
-/* --- Mumbai clock pill (top-left). Move with --sc-left / --sc-top if needed. --- */
-.sc-clock {
-  position: fixed;
-  top: calc(var(--sc-top, 10px) + env(safe-area-inset-top, 0px));
-  left: calc(var(--sc-left, 10px) + env(safe-area-inset-left, 0px));
-  z-index: 35;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0;
-  padding: 0.38rem 0.75rem;
-  border: 1px solid rgba(201, 162, 74, 0.32);
-  border-radius: 999px;
-  background: rgba(15, 16, 19, 0.74);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  color: #e8e6df;
-  font: 600 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  cursor: default;
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.sc-clock:focus-visible {
-  outline: 2px dashed #c9a24a;
-  outline-offset: 3px;
-}
-.sc-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #6b7280;
-}
-.is-online .sc-dot {
-  background: #4ade80;
-  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
-}
-.sc-status {
-  display: none;
-  color: #9aa4b2;
-  font-weight: 500;
-}
-@media (min-width: 560px) {
-  .sc-status {
-    display: inline;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .is-online .sc-dot {
-    animation: sc-pulse 2.4s ease-in-out infinite;
-  }
-}
-@keyframes sc-pulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18); }
-  50% { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0.06); }
-}
-
 /* --- Hidden terminal ---------------------------------------------------- */
 .ht-overlay {
   position: fixed;
@@ -187,38 +126,6 @@
     align-items: flex-start;
     padding-top: calc(12px + env(safe-area-inset-top, 0px));
   }
-}
-
-/* --- Availability badge (top-left, under the clock) ---------------------- */
-.av-badge {
-  position: fixed;
-  top: calc(var(--sc-top, 10px) + 38px + env(safe-area-inset-top, 0px));
-  left: calc(var(--sc-left, 10px) + env(safe-area-inset-left, 0px));
-  z-index: 35;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0;
-  padding: 0.36rem 0.75rem;
-  border: 1px solid rgba(201, 162, 74, 0.32);
-  border-radius: 999px;
-  background: rgba(15, 16, 19, 0.74);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  color: #e6c877;
-  font: 600 0.7rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  cursor: default;
-  pointer-events: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.av-dot { width: 7px; height: 7px; border-radius: 50%; background: #c9a24a; }
-.av-badge.is-open .av-dot { background: #4ade80; }
-.av-badge.is-full .av-dot { background: #f59e0b; }
-@media (prefers-reduced-motion: no-preference) {
-  .av-badge.is-open .av-dot { animation: sc-pulse 2.4s ease-in-out infinite; }
 }
 
 /* --- Sound toggle (top-right; above the intro so it can be muted early) - */

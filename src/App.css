@@ -216,8 +216,21 @@ html[data-ipod-theme="ice"] .ipod .battery { border-color: #123a5c; }
 html[data-ipod-theme="ice"] .ipod .battery:before { background-color: #123a5c; border-color: #c8e6ff; }
 html[data-ipod-theme="ice"] .ipod .battery:after { border-color: #123a5c; border-left-color: #c8e6ff; }
 
-/* Make room for the clock + availability badge so they never sit on top of
-   the cover colour / background / surprise pills. */
-@media (max-width: 960px) {
-  .df-pickers { margin-top: 78px; }
+/* Clock in the empty left slot of the iPod screen header (mirrors the battery). */
+.ipod .screen .ipod-clock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  margin: 0.4em 0.55em;
+  font: inherit;
+  font-size: 0.95em;
+  line-height: 1em;
+  color: inherit;
+  letter-spacing: 0.02em;
+  pointer-events: auto;
+}
+/* Sub-menus replace the header with a longer title, so hide the clock there. */
+.ipod .screen[data-title] .ipod-clock {
+  display: none;
 }

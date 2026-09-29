@@ -6,10 +6,10 @@ import { burstConfetti } from './confetti'
 type LineKind = 'in' | 'out' | 'accent' | 'muted'
 type Line = { id: number; kind: LineKind; text: string; href?: string }
 type Out = Omit<Line, 'id'>
-type Action = 'clear' | 'exit' | 'hire' | 'secret' | null
+type Action = 'clear' | 'exit' | 'hire' | 'secret' | 'intro' | null
 
 const EMAIL = 'ansari.bilal10976@gmail.com'
-const CHIPS = ['help', 'whoami', 'projects', 'services', 'contact', 'hire']
+const CHIPS = ['help', 'whoami', 'projects', 'services', 'contact', 'hire', 'intro']
 const KONAMI = [
   'arrowup', 'arrowup', 'arrowdown', 'arrowdown',
   'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a',
@@ -50,6 +50,7 @@ function respond(key: string): { lines: Out[]; action: Action } {
           out('  contact    ways to reach me'),
           out('  hire       open the project form'),
           out('  time       Mumbai time now'),
+          out('  intro      replay the boot intro'),
           out('  clear      wipe the screen'),
           out('  exit       close'),
         ],
@@ -100,6 +101,8 @@ function respond(key: string): { lines: Out[]; action: Action } {
       return { lines: [out('nice try. permission denied ◆', 'muted')], action: null }
     case 'hire':
       return { lines: [out('opening the project form…', 'accent')], action: 'hire' }
+    case 'intro':
+      return { lines: [out('replaying intro…', 'accent')], action: 'intro' }
     case 'secret':
       return {
         lines: [
@@ -159,6 +162,14 @@ export default function HiddenTerminal() {
       push([{ kind: 'in', text: cmd }, ...res])
       if (action === 'exit') window.setTimeout(() => setOpen(false), 250)
       if (action === 'secret') burstConfetti()
+      if (action === 'intro') {
+        try {
+          localStorage.removeItem('obs-intro-seen')
+        } catch {
+          /* storage unavailable */
+        }
+        window.setTimeout(() => window.location.reload(), 500)
+      }
       if (action === 'hire') {
         skipRestoreRef.current = true
         window.setTimeout(() => {

@@ -7,11 +7,10 @@ import './App.css'
 import { initIpodSticker } from './deskfolio-ipod-interactive'
 import IntroBoot from './components/IntroBoot'
 import PortfolioExtras from './components/PortfolioExtras'
-import MumbaiClock from './components/MumbaiClock'
 import HiddenTerminal from './components/HiddenTerminal'
-import AvailabilityBadge from './components/AvailabilityBadge'
 import SoundToggle from './components/SoundToggle'
 import { initTypingSounds } from './components/sound'
+import { initIpodClock } from './components/ipodClock'
 
 const INTRO_KEY = 'obs-intro-seen'
 const INTRO_TTL = 7 * 24 * 60 * 60 * 1000
@@ -46,7 +45,12 @@ export default function App() {
 
   useEffect(() => {
     initIpodSticker()
-    return initTypingSounds()
+    const stopSounds = initTypingSounds()
+    const stopClock = initIpodClock()
+    return () => {
+      stopSounds()
+      stopClock()
+    }
   }, [])
 
   return (
@@ -67,8 +71,6 @@ export default function App() {
           }}
         />}
       <PortfolioExtras />
-      <MumbaiClock />
-      <AvailabilityBadge />
       <SoundToggle />
       <HiddenTerminal />
     </>
