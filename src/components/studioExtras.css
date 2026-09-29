@@ -209,13 +209,11 @@
   font: 600 0.7rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-tap-highlight-color: transparent;
+  cursor: default;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.av-badge:hover { border-color: #c9a24a; background: rgba(28, 26, 20, 0.85); }
-.av-badge:focus-visible { outline: 2px dashed #c9a24a; outline-offset: 3px; }
 .av-dot { width: 7px; height: 7px; border-radius: 50%; background: #c9a24a; }
 .av-badge.is-open .av-dot { background: #4ade80; }
 .av-badge.is-full .av-dot { background: #f59e0b; }
