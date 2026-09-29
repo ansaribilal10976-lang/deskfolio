@@ -215,3 +215,9 @@ html[data-ipod-theme="ice"] .ipod .menu li.active { background-color: #123a5c; c
 html[data-ipod-theme="ice"] .ipod .battery { border-color: #123a5c; }
 html[data-ipod-theme="ice"] .ipod .battery:before { background-color: #123a5c; border-color: #c8e6ff; }
 html[data-ipod-theme="ice"] .ipod .battery:after { border-color: #123a5c; border-left-color: #c8e6ff; }
+
+/* Make room for the clock + availability badge so they never sit on top of
+   the cover colour / background / surprise pills. */
+@media (max-width: 960px) {
+  .df-pickers { margin-top: 78px; }
+}

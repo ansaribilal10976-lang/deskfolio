@@ -223,11 +223,11 @@
   .av-badge.is-open .av-dot { animation: sc-pulse 2.4s ease-in-out infinite; }
 }
 
-/* --- Sound toggle (bottom-left; above the intro so it can be muted early) - */
+/* --- Sound toggle (top-right; above the intro so it can be muted early) - */
 .st-btn {
   position: fixed;
-  left: calc(var(--st-left, 10px) + env(safe-area-inset-left, 0px));
-  bottom: calc(var(--st-bottom, 14px) + env(safe-area-inset-bottom, 0px));
+  right: calc(var(--st-right, 10px) + env(safe-area-inset-right, 0px));
+  top: calc(var(--st-top, 10px) + env(safe-area-inset-top, 0px));
   z-index: 10001;
   display: inline-flex;
   align-items: center;
