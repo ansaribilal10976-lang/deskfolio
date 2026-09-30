@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112">
+<defs>
+<filter id="cut" x="-20%" y="-20%" width="140%" height="145%">
+<feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
+<feFlood flood-color="#ffffff" result="fw"/><feComposite in="fw" in2="d" operator="in" result="w"/>
+<feMerge result="m"><feMergeNode in="w"/><feMergeNode in="SourceGraphic"/></feMerge>
+<feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .45 0" result="k"/>
+<feGaussianBlur in="k" stdDeviation="3" result="b"/>
+<feOffset in="b" dy="3" result="s"/>
+<feMerge><feMergeNode in="s"/><feMergeNode in="m"/></feMerge>
+</filter>
+
+</defs>
+<g filter="url(#cut)">
+<rect x="18" y="18" width="76" height="76" rx="12" fill="#b71c1c" stroke="#5a0f0f" stroke-width="2"/>
+<rect x="25" y="25" width="62" height="62" rx="7" fill="none" stroke="#fff" stroke-width="2" opacity=".85"/>
+<text x="56" y="73" text-anchor="middle" font-family="Noto Serif CJK JP,Hiragino Mincho ProN,Yu Mincho,serif" font-size="46" font-weight="700" fill="#fff">影</text>
+</g>
+</svg>

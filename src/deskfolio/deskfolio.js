@@ -767,11 +767,11 @@ const ke = {
       // right side: greenery + cuties
       { src: B + "sticker-plant-succulent.svg", width: "clamp(40px, 9.5vw, 132px)", rotate: 4, pos: { top: "8%", right: "4.5%" } },
       // succulent
-      { src: B + "sticker-cutie-tulip-heart.svg", width: "clamp(40px, 9.5vw, 118px)", rotate: -10, pos: { top: "32%", right: "11%" } },
+      { src: B + "sticker-mine-obsidian.svg", width: "clamp(40px, 9.5vw, 118px)", rotate: -10, pos: { top: "32%", right: "11%" } },
       // tulip-heart
       { src: B + "sticker-cutie-sleepy-kitty.svg", width: "clamp(48px, 11.5vw, 138px)", rotate: 8, pos: { top: "52%", right: "6%" } },
       // sleepy kitty
-      { src: B + "sticker-note-pink.svg", width: "clamp(44px, 10vw, 126px)", rotate: -6, pos: { bottom: "36%", left: "20%" }, stuck: !0 }
+      { src: B + "sticker-note-yellow.svg", width: "clamp(44px, 10vw, 126px)", rotate: -6, pos: { bottom: "36%", left: "20%" }, stuck: !0 }
       // pink sticky note
     ]
   },
@@ -921,6 +921,26 @@ function Ae() {
 }
 const Mt = [
   {
+    id: "mine",
+    name: "Obsidian",
+    // dark / anime / dev / streetwear pack
+    files: [
+      "sticker-mine-nero.svg",
+      "sticker-mine-obsidian.svg",
+      "sticker-mine-katana.svg",
+      "sticker-mine-oni.svg",
+      "sticker-mine-kanji-shadow.svg",
+      "sticker-mine-torii.svg",
+      "sticker-mine-terminal.svg",
+      "sticker-mine-bolt.svg",
+      "sticker-mine-moon.svg",
+      "sticker-mine-headphones.svg",
+      "sticker-mine-ramen.svg",
+      "sticker-mine-code.svg",
+      "sticker-mine-404.svg"
+    ]
+  },
+  {
     id: "cute",
     name: "Cute",
     files: [
@@ -935,25 +955,14 @@ const Mt = [
       "sticker-cutie-cat-wiggle.svg",
       "sticker-cutie-cat-meow.svg",
       "sticker-cutie-sleepy-kitty.svg",
-      "sticker-cutie-sleepy-bunny.svg",
-      "sticker-cutie-unicorn-float.svg",
       "sticker-cutie-apple.svg",
-      "sticker-cutie-cherry-mug.svg",
       "sticker-cutie-rocket.svg",
-      "sticker-cutie-gift.svg",
-      "sticker-cutie-flower-smile.svg",
-      "sticker-cutie-tulip-heart.svg",
-      "sticker-cutie-heart-thanks.svg",
-      "sticker-cutie-heart-mend.svg",
-      "sticker-cutie-rainbow-cloud.svg",
-      "sticker-cutie-poppies.svg",
       "sticker-cutie-gameboy.svg",
       "sticker-cute-pop-cat-face.svg",
       "sticker-cute-pop-fox-face.svg",
       "sticker-cute-pop-koi-fish.svg",
       "sticker-cute-pop-reindeer.svg",
-      "sticker-cute-pop-skull.svg",
-      "sticker-cute-pop-unicorn.svg"
+      "sticker-cute-pop-skull.svg"
     ]
   },
   {
@@ -961,8 +970,6 @@ const Mt = [
     name: "Sticky Notes",
     files: [
       "sticker-note-yellow.svg",
-      "sticker-note-pink.svg",
-      "sticker-note-mint.svg",
       "sticker-note-blue.svg"
     ]
   },
@@ -1025,7 +1032,7 @@ me.set(Se, "desk");
 ye.push(Se);
 me.set(_e, "stationery");
 ye.push(_e);
-const Be = Mt.map((t) => ({ id: t.id, name: t.name })), Ye = (t) => /sticker-(cutie|cute-pop|dev|onepiece|op|note)-/.test(t), p0 = (t) => /sticker-dev-/.test(t), u0 = "clamp(56px, 12.5vw, 132px)", Qt = B + "sticker-keyboard.svg", h0 = [
+const Be = Mt.map((t) => ({ id: t.id, name: t.name })), Ye = (t) => /sticker-(cutie|cute-pop|dev|onepiece|op|note|mine)-/.test(t), p0 = (t) => /sticker-dev-/.test(t), u0 = "clamp(56px, 12.5vw, 132px)", Qt = B + "sticker-keyboard.svg", h0 = [
   { id: "mint", name: "Mint", src: Qt, swatch: "#8bbba8" },
   { id: "aqua", name: "Aqua", src: B + "sticker-keyboard-blue.svg", swatch: "#8cbfe0" },
   { id: "orange", name: "Orange", src: B + "sticker-keyboard-orange.svg", swatch: "#e58e3e" },

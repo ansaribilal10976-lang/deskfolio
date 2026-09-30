@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112">
+<defs>
+<filter id="cut" x="-20%" y="-20%" width="140%" height="145%">
+<feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
+<feFlood flood-color="#ffffff" result="fw"/><feComposite in="fw" in2="d" operator="in" result="w"/>
+<feMerge result="m"><feMergeNode in="w"/><feMergeNode in="SourceGraphic"/></feMerge>
+<feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .45 0" result="k"/>
+<feGaussianBlur in="k" stdDeviation="3" result="b"/>
+<feOffset in="b" dy="3" result="s"/>
+<feMerge><feMergeNode in="s"/><feMergeNode in="m"/></feMerge>
+</filter>
+
+</defs>
+<g filter="url(#cut)">
+<defs><mask id="m"><rect width="112" height="112" fill="#fff"/><circle cx="74" cy="42" r="32" fill="#000"/></mask></defs>
+<circle cx="52" cy="58" r="42" fill="#f3d98b" mask="url(#m)"/>
+<polygon points="88,26 90,32 96,34 90,36 88,42 86,36 80,34 86,32" fill="#e6c877"/>
+<polygon points="98,58 99.5,62 104,63.5 99.5,65 98,69 96.5,65 92,63.5 96.5,62" fill="#e6c877"/>
+</g>
+</svg>

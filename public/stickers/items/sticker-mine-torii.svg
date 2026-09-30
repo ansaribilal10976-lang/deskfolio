@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 112">
+<defs>
+<filter id="cut" x="-20%" y="-20%" width="140%" height="145%">
+<feMorphology in="SourceAlpha" operator="dilate" radius="3" result="d"/>
+<feFlood flood-color="#ffffff" result="fw"/><feComposite in="fw" in2="d" operator="in" result="w"/>
+<feMerge result="m"><feMergeNode in="w"/><feMergeNode in="SourceGraphic"/></feMerge>
+<feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .45 0" result="k"/>
+<feGaussianBlur in="k" stdDeviation="3" result="b"/>
+<feOffset in="b" dy="3" result="s"/>
+<feMerge><feMergeNode in="s"/><feMergeNode in="m"/></feMerge>
+</filter>
+
+</defs>
+<g filter="url(#cut)">
+<circle cx="56" cy="52" r="17" fill="#f3d98b"/>
+<rect x="28" y="38" width="9" height="60" fill="#c62828"/><rect x="75" y="38" width="9" height="60" fill="#c62828"/>
+<rect x="20" y="46" width="72" height="7" fill="#c62828"/>
+<polygon points="6,24 106,24 99,36 13,36" fill="#c62828" stroke="#5a0f0f" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="26" y="90" width="13" height="8" fill="#111"/><rect x="73" y="90" width="13" height="8" fill="#111"/>
+</g>
+</svg>
