@@ -60,7 +60,7 @@ export default function IntroBoot({ onDone }: { onDone: () => void }) {
   async function typeLine(i: number, text: string) {
     for (let c = 1; c <= text.length; c++) {
       if (skipped.current) return
-      if (c % 2 === 1) typeSound()
+      if (c % 3 === 1) typeSound()
       setTyped((prev) => {
         const next = [...prev]
         next[i] = text.slice(0, c)

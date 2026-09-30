@@ -59,27 +59,42 @@ function noise(c: AudioContext): AudioBuffer {
   return noiseBuf
 }
 
-/** Soft mechanical key click. Slightly randomised so it never sounds robotic. */
+/** Soft, low "thock" key tap (no sharp noise burst, so it never sounds like crackers). */
 export function typeSound(strong = false) {
   const now = performance.now()
-  if (now - last < 28) return
+  if (now - last < 45) return
   last = now
   const c = getCtx()
   if (!c) return
   const t = c.currentTime
+  const base = (strong ? 150 : 200) + Math.random() * 40
+
+  // body: a short low sine that drops in pitch
+  const o = c.createOscillator()
+  o.type = 'sine'
+  o.frequency.setValueAtTime(base, t)
+  o.frequency.exponentialRampToValueAtTime(base * 0.55, t + 0.06)
+  const g = c.createGain()
+  const peak = (strong ? 0.09 : 0.06) * (0.85 + Math.random() * 0.3)
+  g.gain.setValueAtTime(0.0001, t)
+  g.gain.linearRampToValueAtTime(peak, t + 0.004)
+  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.07)
+  o.connect(g).connect(c.destination)
+  o.start(t)
+  o.stop(t + 0.08)
+
+  // tiny muffled tick for a bit of texture, low-passed so it stays soft
   const src = c.createBufferSource()
   src.buffer = noise(c)
-  const bp = c.createBiquadFilter()
-  bp.type = 'bandpass'
-  bp.frequency.value = (strong ? 1500 : 2200) + Math.random() * 900
-  bp.Q.value = 0.9
-  const g = c.createGain()
-  const peak = (strong ? 0.22 : 0.14) * (0.8 + Math.random() * 0.4)
-  g.gain.setValueAtTime(peak, t)
-  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.045)
-  src.connect(bp).connect(g).connect(c.destination)
+  const lp = c.createBiquadFilter()
+  lp.type = 'lowpass'
+  lp.frequency.value = 900
+  const ng = c.createGain()
+  ng.gain.setValueAtTime(0.012, t)
+  ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.03)
+  src.connect(lp).connect(ng).connect(c.destination)
   src.start(t)
-  src.stop(t + 0.05)
+  src.stop(t + 0.04)
 }
 
 /** Short two-note blip: rising = on / success, falling = off. */
