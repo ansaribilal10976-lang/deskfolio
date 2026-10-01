@@ -2161,7 +2161,7 @@ const A0 = (t) => /* @__PURE__ */ e("svg", { viewBox: "0 0 24 24", fill: "curren
         /* @__PURE__ */ e($e, { href: "https://stonemountgroup.in", variant: 0, children: "Stone Mount Group" }),
         /* @__PURE__ */ e("span", { className: "df-proj-meta", children: "real estate" })
       ] }),
-      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite website for a real estate developer." })
+      /* @__PURE__ */ e(ue, { className: "df-edit--body df-proj-desc", placeholder: "describe it…", initial: "A React + Vite site for a Mumbai real estate developer: 13 project pages with photo galleries, SEO-ready and fast on mobile." })
     ] }),
   ] }, "p2"),
   // spread 2 right: services
